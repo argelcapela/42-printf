@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/20 15:08:27 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/20 15:08:27 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include "libft.h"
 
-	return (0);
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	if (!lst)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

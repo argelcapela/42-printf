@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/20 15:08:31 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/20 15:08:31 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include "libft.h"
 
-	return (0);
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*ptr;
+
+	ptr = lst;
+	if (!lst)
+		return (NULL);
+	while (ptr->next)
+		ptr = ptr->next;
+	return (ptr);
 }

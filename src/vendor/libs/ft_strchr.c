@@ -1,17 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/19 21:44:17 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/19 21:44:17 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include	"libft.h"
 
-	return (0);
+char	*ft_strchr(const char *str, int ch)
+{
+	size_t	i;
+
+	i = 0;
+	while (*str)
+	{
+		if (*str == (unsigned char)ch)
+			return ((char *)str);
+		str++;
+	}
+	if ((unsigned char)ch == '\0')
+		return ((char *)str);
+	return (NULL);
 }

@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/19 21:44:27 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/19 21:44:27 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include	"libft.h"
 
-	return (0);
+char	*ft_strdup(const char *s)
+{
+	int		i;
+	char	*strd;
+
+	i = 0;
+	strd = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!strd)
+		return (NULL);
+	while (s[i])
+	{
+		strd[i] = s[i];
+		i++;
+	}
+	strd[i] = '\0';
+	return (strd);
 }

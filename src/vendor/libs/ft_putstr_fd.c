@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/19 21:43:54 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/19 21:43:54 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include	"libft.h"
 
-	return (0);
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s == 0)
+		return ;
+	while (*s)
+		write(fd, s++, 1);
 }

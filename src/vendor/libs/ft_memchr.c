@@ -1,17 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/19 21:42:44 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/19 21:42:44 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include	"libft.h"
 
-	return (0);
+void	*ft_memchr(const void *str, int ch, size_t n)
+{
+	unsigned int	i;
+	unsigned char	*xstr;
+
+	i = 0;
+	xstr = (unsigned char *) str;
+	while (i < n)
+	{
+		if (xstr[i] == (unsigned char)ch)
+		{
+			xstr += i;
+			return ((void *)xstr);
+		}
+		i++;
+	}
+	return (NULL);
 }

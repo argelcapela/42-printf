@@ -1,17 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/19 21:38:54 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/19 21:38:54 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include	"libft.h"
 
-	return (0);
+int	ft_atoi(const char *str)
+{
+	int	s;
+	int	i;
+	int	res;
+
+	s = 1;
+	i = 0;
+	res = 0;
+	while (str[i] == '\t' || str[i] == ' ' || str[i] == '\r'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\n')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+		{
+			s *= -1;
+		}
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (res * s);
 }

@@ -1,1 +1,1 @@
-NAME= libftprint.a
+NAME= libftprintf.a

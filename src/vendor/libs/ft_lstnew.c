@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/20 15:08:40 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/20 15:08:40 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include	"libft.h"
 
-	return (0);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new;
+
+	new = (t_list *) malloc(sizeof(t_list *));
+	if (new == NULL)
+		return (NULL);
+	new->content = (t_list *) content;
+	new->next = NULL;
+	return (new);
 }

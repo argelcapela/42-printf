@@ -1,17 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/19 20:33:24 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/19 20:33:24 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include "libft.h"
 
-	return (0);
+void	ft_putnbr_fd(int n, int fd)
+{
+	int		mais1;
+	char	c;
+
+	mais1 = 0;
+	if (n < 0)
+	{
+		if (n == -2147483648)
+		{
+			n += 1;
+			mais1 = 1;
+		}
+		n *= -1;
+		write(fd, "-", 1);
+	}
+	if (n < 10)
+	{
+		c = '0' + n;
+		write (fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10 + mais1, fd);
+	}
 }

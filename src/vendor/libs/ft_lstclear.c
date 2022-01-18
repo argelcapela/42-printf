@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 03:32:03 by acapela-         ###   ########.fr       */
+/*   Created: 2021/09/20 15:08:19 by acapela-          #+#    #+#             */
+/*   Updated: 2021/09/20 15:08:19 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *format, ...)
-{
+#include "libft.h"
 
-	return (0);
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*ptr;
+
+	ptr = *lst;
+	while (ptr)
+	{
+		ptr = ptr->next;
+		ft_lstdelone(*lst, del);
+		*lst = ptr;
+	}
+	free(ptr);
 }
