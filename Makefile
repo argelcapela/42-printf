@@ -1,3 +1,10 @@
+all:
+	@clear
+	@sed -i '1 s/.*/ \#include \<stdio\.h> /' ./test/main.c
+	@gcc ./test/main.c
+	@./a.out | cat -e
+	@rm a.out
+
 # targets for test my inspiration code projects
 i3:
 	@sed -i '1 s/.*/ \#include \"\.\.\/inspiration\/3\_printf\_iralmeida\/ft_printf.h\" /' ./test/main.c
