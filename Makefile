@@ -2,6 +2,13 @@ all:
 	@clear
 	@sed -i '1 s/.*/ \#include \<stdio\.h> /' ./test/main.c
 	@gcc ./test/main.c
+	@./a.out
+	@rm a.out
+
+c:
+	@clear
+	@sed -i '1 s/.*/ \#include \<stdio\.h> /' ./test/main.c
+	@gcc ./test/main.c
 	@./a.out | cat -e
 	@rm a.out
 
