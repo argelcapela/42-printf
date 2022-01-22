@@ -6,13 +6,13 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 20:34:31 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/18 06:53:06 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/21 21:27:08 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t		ls1;
 	size_t		ls2;

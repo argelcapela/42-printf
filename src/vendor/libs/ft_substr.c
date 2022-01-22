@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 21:46:08 by acapela-          #+#    #+#             */
-/*   Updated: 2021/09/19 21:46:08 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/21 21:23:21 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	size_t	totallen;
 	char	*substr;
 
-	i = 0;
 	if (s == NULL)
 		return (NULL);
 	totallen = ft_strlen(s);
