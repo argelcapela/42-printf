@@ -95,7 +95,7 @@
 
 	
 	
-<!--
+
 <br><br><br>
 <br><br><br>
 <br><br>
@@ -107,8 +107,11 @@
 </div>    
 <br><br>
 
-<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+
 <br><br>
+
+<!--
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <h2 id="algoritmo">Algoritmo GNL?</h2>
 <b>Passos Essências para se construir uma GNL</b>
 	<br>
@@ -391,6 +394,7 @@ $ git clone https://github.com/Tripouille/gnlTester.git
 ```
 <br>
 <br></br>
+--->
 
 <h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
@@ -399,61 +403,21 @@ $ git clone https://github.com/Tripouille/gnlTester.git
 <h2 id="outras">Outras coisas legais!</h2>
 
 ```
-ulimit -n
+export PS1="\u > "
 ```
 
-<p>Informa a quantidade máxima de File Descriptors possível no sistema.</p>
+<p>Esconder o diretório do diretório atual do shell. Negócio chato ... 🤨</p>
 
 <br><br>
 
-```bash
-@rm -rf *.o 2>/dev/null || true
-```
-
-<li>@: esconde o comando.</li>
-<li>2>/dev/null || true: esconde os erros se houver.</li>
-
-<br><br>
-
-```bash
-make -C /other/dir
-```
-
-```bash
-cd /other/dir && make
-```
-<p>Executa o Makefile de outro diretório.</p>
-
-<br><br>
-
-<b>Qual a merda da diferença entre esses char* e const char*?</b>
-
-<li>char*: string normal, ponteiro que aponta para o primeiro caracter de uma sequência de caracteres, num bloco de memória.</li>
-<li>const char*: também é um string porém é uma string que não pode ser alterada de modo algum.</li>
-<li>char* const: Quando o const vem pra frente ele afeta o ponteiro, ou seja, esse ponteiro não pode mudar de posição.</li>
-<li>const char* const: Aqui se acumulam os dois casos, a string não pode ser alterada e nem o ponteiro de posição.</li>
-<i>Esses dois últimos casos são muito específicos e pouco usados!</i>
 		     
 <br><br>
 
 <h2 id="fontes">Fontes</h2>
-<li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
-<li><a href="https://www.youtube.com/watch?v=TBGu3NNpF1Q">Restrict 2</a></li>
-<li><a href="https://godbolt.org/">Explore o Assembly de seus códigos em C</a></li> 
-<li><a href="https://www.youtube.com/watch?v=pVcuigMNFgA">Stack x Heap</a></li> 
-<li><a href="https://man7.org/linux/man-pages/man2/open.2.html">OPEN</a></li> 
-<li><a href="https://man7.org/linux/man-pages/man2/read.2.html">READ</a></li> 
-<li><a href="https://man7.org/linux/man-pages/man2/write.2.html">WRITE</a></li> 
-<li><a href="https://www.youtube.com/watch?v=Fa6Jq0Iue3U">CS50 - Memory</a></li> 
-<li><a href="https://www.youtube.com/watch?v=qZ1oQLu7M5Y">Segmentation Fault 1</a></li> 
-<li><a href="https://www.youtube.com/watch?v=UOns2zDUv30">Core Dump</a></li> 
-<li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
-<li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
-<li><a href="https://superuser.com/questions/370575/how-to-run-make-file-from-any-directory">Executing Makefile in another directory</a></li> 
-<li><a href="https://qastack.com.br/programming/9834067/difference-between-char-and-const-char">Const 1</a></li> 
-<li><a href="https://pt.stackoverflow.com/questions/483461/diferen%C3%A7a-em-char-e-const-char-no-inicio-de-uma-fun%C3%A7%C3%A3o-em-c">Const 2</a></li> 
+<li><a href="#"> Link 1</a></li>
+
 
 
 </div>
 
---->
+
