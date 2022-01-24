@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   prepare_to_translation.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/24 23:27:16 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/22 03:00:24 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/24 23:27:08 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+char	*prepare_to_translation(const char *format, va_list *vl)
 {
-	int len;
 	char *fmt;
-	va_list vl;
+	t_args arg;
 
-	va_start(vl, format);
-	fmt = prepare_to_translation(format, &vl);
-	va_end(vl);
-	len = print_to_fd((char*)fmt, FD);
-	return (len);
+	fmt = ft_strdup(format);
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			initialize_struct(&arg);
+			format += understand_arg(&arg, format, vl);
+			fmt = understand_type(*format, fmt, &arg, vl);
+			destroy_struct(&arg);
+		}
+		format++;
+	}
+	return (fmt);
 }

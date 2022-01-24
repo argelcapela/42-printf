@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   initialize_struct.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/24 23:27:16 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/22 03:05:43 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/22 06:08:19 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	initialize_struct(t_args *arg)
 {
-	int len;
-	char *fmt;
-	va_list vl;
-
-	va_start(vl, format);
-	fmt = prepare_to_translation(format, &vl);
-	va_end(vl);
-	len = print_to_fd((char*)fmt, FD);
-	return (len);
+	arg->negative = 0;
+	arg->hash = 0;
+	arg->minus = 0;
+	arg->plus = 0;
+	arg->space = 0;
+	arg->zero = 0;
+	arg->dot = 0;
+	arg->width = 0;
+	arg->precision = -1;
+	arg->type = 0;
+	arg->argument = NULL;
 }

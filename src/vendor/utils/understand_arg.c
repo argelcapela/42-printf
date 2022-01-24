@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   translate_to_string.c                              :+:      :+:    :+:   */
+/*   understand_arg.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/24 23:23:34 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/22 03:15:49 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/24 00:10:41 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-/*char	*put_width(char	*str_to_return, t_args *arg)
+char	understand_arg(t_args *arg, const char *format, va_list *vl)
 {
+	char *start_of_str;
 
-}
-
-char	*put_precision(char	*str_to_return, t_args *arg)
-{
-
-}*/
-
-#include <string.h>
-
-char	*translate_to_string(t_args *arg, char *fmt, char *value)
-{
-
-	fmt = ft_str_replace(fmt, arg->argument, value);
-	return (fmt);
+	arg->argument = malloc(sizeof(char) * (ft_strlen(format) + 1));
+	start_of_str = arg->argument;
+	*arg->argument++ = *format++;
+	what_flags(arg, &format);
+	what_width(arg, &format, vl);
+	what_precision(arg, &format, vl);
+	*arg->argument++ = *format++;
+	arg->type = *format;
+	arg->argument = start_of_str;
+	return (ft_strlen(arg->argument) - 1);
 }

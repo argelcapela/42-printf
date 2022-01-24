@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 20:34:46 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/21 21:27:16 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/24 21:54:51 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+char	*ft_str_replace(char *str, char* search, char *replace);
+void	ft_free_ptr(void **ptr);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t n);
 void	*ft_calloc(size_t num, size_t size);

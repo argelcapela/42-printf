@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/21 22:16:19 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/24 03:27:43 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_args
 	int		space;
 	int		zero;
 	int		dot;
+	int		width;
 	int		precision;
 	char	type;
 	char	*argument;
@@ -37,15 +38,44 @@ typedef struct s_args
 # include <stdio.h>
 
 /*---------------------specifiers-----------------------------------  */
-char	*translate_to_string(char *format, char *value, t_args *args);
+
+// %%
+char	*translate_percent  (char *fmt);
+
+// %c
+char	*translate_to_char(t_args *arg, char *fmt, int value);
+
+// %s
+char	*translate_to_string(t_args *arg, char *fmt, char *value);
+
+// %p
+char	*translate_to_pointer(t_args *arg, char *fmt, unsigned long int value);
+
+// %i
+char	*translate_to_integer (t_args *arg, char *fmt, int value);
+
+// %d
+char	*translate_to_decimal (t_args *arg, char *fmt, int value);
+
+// %u
+char	*translate_to_unsigned_int (t_args *arg, char *fmt,unsigned int value);
+
+// %x,%X
+char	*translate_to_hexadecimal  (t_args *arg, char *fmt, unsigned int value);
 
 /*---------------------utils----------------------------------------  */
-void	initialize_struct(t_args *args);
-void	destroy_struct(t_args *args);
+void	initialize_struct(t_args *arg);
+void	destroy_struct(t_args *arg);
 
-char	*prepare_to_translation(const char *format, va_list *ap);
-char	understand_arg(t_args *args, const char *format, va_list *ap);
+// Running format and filling struct with flags, width and precision;
+char	*prepare_to_translation(const char *format, va_list *vl);
+char	understand_arg(t_args *arg, const char *format, va_list *vl);
+char	*understand_type(char type, char *fmt, t_args *arg, va_list *vl);
+void 	what_flags(t_args *arg, const char **format);
+void 	what_width(t_args *arg, const char **format, va_list *vl);
+void 	what_precision(t_args *arg, const char **format, va_list *vl);
 
+// Output formatted str
 int		print_to_fd(const char *fmt_translated, int fd);
 /*--------------------- start --------------------------------------  */
 int	ft_printf(const char *format, ...);

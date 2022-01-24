@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   what_width.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/24 23:27:16 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/22 04:13:51 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/24 00:09:10 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void 	what_width(t_args *arg, const char **format, va_list *vl)
 {
-	int len;
-	char *fmt;
-	va_list vl;
-
-	va_start(vl, format);
-	fmt = prepare_to_translation(format, &vl);
-	va_end(vl);
-	len = print_to_fd((char*)fmt, FD);
-	return (len);
+	if (ft_isdigit(**format))
+	{
+		while (ft_isdigit(**format))
+		{
+			arg->width = (arg->width * 10) + (**format - '0');
+			*arg->argument++ = *(*format)++;
+		}
+	}
+	else if(**format == '*')
+	{
+		arg->width = va_arg(*vl, int);
+		*arg->argument++ = '*';
+	}
 }
