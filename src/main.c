@@ -4,6 +4,7 @@
 
 int main(void)
 {
+	/*
 	char *str;
 	str = malloc(sizeof(char) * 10);
 	strcpy(str, "printf");
@@ -18,5 +19,9 @@ int main(void)
 	ft_printf("%%i: %i\n", d);
 	ft_printf("%%u: %i\n", u);
 	ft_printf("%%x: %x\n", &str);
+	*/
+
+	//char *str = ft_strdup("argel");
+	ft_printf("%s", NULL);
 	return(0);
 }

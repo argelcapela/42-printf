@@ -6,13 +6,13 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 21:46:33 by acapela-          #+#    #+#             */
-/*   Updated: 2021/09/19 21:46:33 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:15:21 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 
-int	ft_toupper(int c)
+char	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{

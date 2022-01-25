@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 12:38:16 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:20:21 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ char	*put_precision(char	*str_to_return, t_args *arg)
 char	*translate_to_unsigned_int(t_args *arg, char *fmt, unsigned int value)
 {
 	// %u
-	//fmt = ft_str_replace(fmt, arg->argument, value);
-	if (arg && fmt && value)
-	{
+	char *u_int;
 
-	}
+	u_int = ft_itoa(value);
+	fmt = ft_str_replace(fmt, arg->argument, u_int);
 	return (fmt);
 }
