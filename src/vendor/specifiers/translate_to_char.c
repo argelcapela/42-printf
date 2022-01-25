@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   translate_to_char.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 14:43:54 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:40:30 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+/*char	*put_width(char	*str_to_return, t_args *arg)
 {
-	int len;
-	char *fmt;
-	va_list vl;
 
-	va_start(vl, format);
-	fmt = prepare_to_translation(format, &vl);
-	va_end(vl);
-	len = print_to_fd((char*)fmt, FD);
-	ft_free_ptr((void *) &fmt);
-	return (len);
+}
+
+char	*put_precision(char	*str_to_return, t_args *arg)
+{
+
+}*/
+
+char	*translate_to_char(t_args *arg, char *fmt, int value)
+{
+	// %c
+	char *c;
+	char *temp_fmt;
+
+	c = ft_chr_to_str(value);
+	temp_fmt = ft_str_replace(fmt, arg->argument, c);
+	ft_free_ptr((void *) &c);
+	return (temp_fmt);
 }

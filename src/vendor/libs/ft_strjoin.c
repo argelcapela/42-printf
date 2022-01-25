@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 20:34:31 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/21 21:27:08 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:05:09 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[++ls2])
 		newstr[ls1 + ls2] = s2[ls2];
 	newstr[ls1 + ls2] = '\0';
-	free(s1);
-	s1 = NULL;
 	return (newstr);
 }

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   what_flags.c                                       :+:      :+:    :+:   */
+/*   translate_to_pointer.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 04:13:51 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 13:06:36 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/25 16:07:29 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-void what_flags(t_args *arg, const char **format)
+/*char	*put_width(char	*str_to_return, t_args *arg)
 {
-	while (1)
-	{
-		if (*(*format) == '#')
-			arg->hash = 1;
-		else if (*(*format) == '-')
-			arg->minus = 1;
-		else if (*(*format) == '+')
-			arg->plus = 1;
-		else if (*(*format) == ' ')
-			arg->space = 1;
-		else if (*(*format) == '0')
-			arg->zero = 1;
-		else
-			break;
-		*arg->argument++ = *(*format)++;
-	}
+
+}
+
+char	*put_precision(char	*str_to_return, t_args *arg)
+{
+
+}*/
+
+char	*translate_to_pointer(t_args *arg, char *fmt, unsigned long int value)
+{
+	// %p
+	char *pointer;
+	char *tmp_pointer;
+
+	pointer = ft_uitoa_base(value, "0123456789abcdef");
+	tmp_pointer = ft_strjoin("0x", pointer);
+	fmt = ft_str_replace(fmt, arg->argument, tmp_pointer);
+	ft_free_ptr((void *) &pointer);
+	return (fmt);
 }

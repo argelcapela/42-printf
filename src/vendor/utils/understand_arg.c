@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 03:15:49 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/24 00:10:41 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/25 13:58:15 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	understand_arg(t_args *arg, const char *format, va_list *vl)
 	what_flags(arg, &format);
 	what_width(arg, &format, vl);
 	what_precision(arg, &format, vl);
-	*arg->argument++ = *format++;
+	*arg->argument = *format;
 	arg->type = *format;
 	arg->argument = start_of_str;
 	return (ft_strlen(arg->argument) - 1);

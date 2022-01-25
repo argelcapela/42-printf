@@ -4,14 +4,14 @@ OBJS= ${SRCS:.c=.o}
 LIBFT= vendor/libs/libft.a
 
 CC = gcc
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 AR = @ar rcs
 RM = rm -f
 
 ${NAME}:${OBJS}
 		#make re -C vendor/libs
 		@${AR} ${NAME} ${OBJS} 1>/dev/null || true
-		@clear && gcc main.c libftprintf.a vendor/libs/libft.a 1>/dev/null || true && ./a.out
+		@clear && gcc -ggdb3 ${CFLAGS}  main.c libftprintf.a vendor/libs/libft.a 1>/dev/null || true && ./a.out
 		@make clean 1>/dev/null || true
 
 all: ${NAME}

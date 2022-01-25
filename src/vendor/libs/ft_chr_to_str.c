@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_chr_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 03:31:12 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 14:43:54 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/25 12:25:31 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:30:07 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
+#include <stdio.h>
 
-int	ft_printf(const char *format, ...)
+char	*ft_chr_to_str(char c)
 {
-	int len;
-	char *fmt;
-	va_list vl;
+	char *str;
 
-	va_start(vl, format);
-	fmt = prepare_to_translation(format, &vl);
-	va_end(vl);
-	len = print_to_fd((char*)fmt, FD);
-	ft_free_ptr((void *) &fmt);
-	return (len);
+	str = malloc(sizeof(char) * 2);
+	if (!str)
+		return (NULL);
+	str[0] = c;
+	str[1] = '\0';
+	return (str);
 }
