@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 20:34:46 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 16:16:59 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/26 18:49:21 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -22,7 +23,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-char	*ft_chr_to_str(char c);
+char	*ft_str_merge(char *s1, char *s2);
+char	*ft_chr_to_str(char c, size_t qtd);
 char	*ft_str_replace(char *str, char* search, char *replace);
 void	ft_free_ptr(void **ptr);
 char	*ft_uitoa_base(size_t n, char* base);
@@ -60,7 +62,7 @@ char	*ft_strrchr(const char *str, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
-int		ft_toupper(int c);
+char	ft_toupper(int c);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

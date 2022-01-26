@@ -6,12 +6,15 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 12:41:22 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:44:46 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# define NULL_PATTERN "___BANANA0_"
+# define PERCENT_PATTERN "___BANANA1_"
 /*---------------------- auxiliary macros -----------------------------  */
 # define FD 1
 

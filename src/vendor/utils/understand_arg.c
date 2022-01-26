@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 03:15:49 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 20:42:15 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/26 15:26:26 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	understand_arg(t_args *arg, const char *format, va_list *vl)
 {
 	char *start_of_str;
 
-	arg->argument = malloc((sizeof(char) * (ft_strlen(format))) + 1);
+	arg->argument = ft_calloc(ft_strlen(format) + 1, sizeof(char));
 	start_of_str = arg->argument;
 	*arg->argument++ = *format++;
 	what_flags(arg, &format);

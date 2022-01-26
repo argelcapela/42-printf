@@ -6,30 +6,36 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 14:40:30 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:37:40 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-/*char	*put_width(char	*str_to_return, t_args *arg)
+static char	*put_width(char *c, t_args *arg)
 {
+	char *width;
 
+	arg->width -= 1;
+	if (arg->width > 0)
+	{
+		width = ft_chr_to_str(' ', arg->width);
+		if (arg->minus)
+			c = ft_str_merge(c, width);
+		else
+			c = ft_str_merge(width, c);
+	}
+	return (c);
 }
-
-char	*put_precision(char	*str_to_return, t_args *arg)
-{
-
-}*/
 
 char	*translate_to_char(t_args *arg, char *fmt, int value)
 {
 	// %c
 	char *c;
-	char *temp_fmt;
 
-	c = ft_chr_to_str(value);
-	temp_fmt = ft_str_replace(fmt, arg->argument, c);
+	c = ft_chr_to_str(value, 1);
+	c = put_width(c, arg);
+	fmt = ft_str_replace(fmt, arg->argument, c);
 	ft_free_ptr((void *) &c);
-	return (temp_fmt);
+	return (fmt);
 }

@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_replace.c                                   :+:      :+:    :+:   */
+/*   ft_str_merge.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 21:47:50 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 20:42:40 by acapela-         ###   ########.fr       */
+/*   Created: 2022/01/26 18:39:46 by acapela-          #+#    #+#             */
+/*   Updated: 2022/01/26 20:37:56 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_replace(char* str, char* search, char* replace)
+char	*ft_str_merge(char *s1, char *s2)
 {
-	int i;
-	int total;
-	char *found;
 	char *new;
+	size_t total;
 
-	if (!str || !search || !replace)
+	if (!s1 || !s2)
 	{
-		ft_free_ptr((void *) &str);
-		return (0);
+		ft_free_ptr((void *) &s1);
+		ft_free_ptr((void *) &s2);
+		return (NULL);
 	}
-	found = ft_strnstr(str, search, ft_strlen(str));
-	if (!found)
-		return (str);
-	total = ft_strlen(str) - ft_strlen(search) + ft_strlen(replace) + 1;
+	total = ft_strlen(s1) + ft_strlen(s2) + 1;
 	new = malloc(sizeof(char) * total);
-	ft_strlcpy(new, str, (found - str) + 1);
-	ft_strlcat(new, replace, total);
-	i = (found - str) + ft_strlen(search);
-	ft_strlcat(new, &str[i], total);
-	ft_free_ptr((void *) &str);
+	if (!new)
+		return (NULL);
+	ft_strlcpy(new, s1, ft_strlen(s1) + 1);
+	ft_strlcat(new, s2, total);
+	ft_free_ptr((void *) &s1);
+	ft_free_ptr((void *) &s2);
 	return (new);
 }

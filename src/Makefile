@@ -11,9 +11,9 @@ RM = rm -f
 ${NAME}:${OBJS}
 		#make re -C vendor/libs
 		@${AR} ${NAME} ${OBJS} 1>/dev/null || true
-		@clear && gcc -ggdb3 ${CFLAGS}  main.c libftprintf.a vendor/libs/libft.a 1>/dev/null || true && ./a.out
+		@clear && gcc -ggdb3 ${CFLAGS}  main.c libftprintf.a vendor/libs/libft.a && ./a.out
 		@make clean 1>/dev/null || true
-
+#1>/dev/null || true && ./a.out
 all: ${NAME}
 
 clean:

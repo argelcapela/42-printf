@@ -3,6 +3,7 @@
 
 int main(void)
 {
-	printf("%s", ft_uitoa_base(100,"01234567"));
+	char *new = ft_chr_to_str('a', 5);
+	printf("%s", new);
 	return (0);
 }
