@@ -153,14 +153,15 @@ int main(void)
 
 	// field width
 		ft_printf("%5c\n", 'x');
-		/*printf("%10s\n", "Hello");
-		printf("%10d\n", 10);
-		printf("%10i\n", 10);
-		unsigned int u = 10000;
-		printf("%10u\n", u);
-		printf("%10x\n", 1000);
-		void *ptr;
-		printf("%10p\n", &ptr);*/
+		//ft_printf("%5s\n", "ar");
+		//ft_printf("%5d\n", 10);
+
+		//printf("%10i\n", 10);
+		//unsigned int u = 10000;
+		//printf("%10u\n", u);
+		//printf("%10x\n", 1000);
+		//void *ptr;
+		//printf("%10p\n", &ptr);
 
 
 	return(0);

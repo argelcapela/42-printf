@@ -4,7 +4,8 @@ OBJS= ${SRCS:.c=.o}
 LIBFT= vendor/libs/libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
+# -Wall -Wextra -Werror
 AR = @ar rcs
 RM = rm -f
 
@@ -13,7 +14,10 @@ ${NAME}:${OBJS}
 		@${AR} ${NAME} ${OBJS} 1>/dev/null || true
 		@clear && gcc -ggdb3 ${CFLAGS}  main.c libftprintf.a vendor/libs/libft.a && ./a.out
 		@make clean 1>/dev/null || true
-#1>/dev/null || true && ./a.out
+
+leak:
+	valgrind --leak-check=full --show-leak-kinds=all ./a.out 
+
 all: ${NAME}
 
 clean:
