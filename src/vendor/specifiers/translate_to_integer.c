@@ -6,17 +6,17 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:17:41 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:44:28 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-static char *minus(char *string, t_args *arg);
+static char	*minus(char *string, t_args *arg);
 
 static char	*put_flags(char *string, t_args *arg, int value)
 {
-	char *sign;
+	char	*sign;
 
 	if (arg->plus && value > 0)
 	{
@@ -26,12 +26,10 @@ static char	*put_flags(char *string, t_args *arg, int value)
 	return (string);
 }
 
-
-
 static char	*put_width(char *string, t_args *arg)
 {
-	char *padding;
-	char ch;
+	char	*padding;
+	char	ch;
 
 	arg->width -= ft_strlen(string);
 	if (arg->width > 0)
@@ -42,7 +40,7 @@ static char	*put_width(char *string, t_args *arg)
 			ch = '0';
 		if (arg->plus)
 		{
-			arg->width-=1;
+			arg->width -= 1;
 			string = ft_str_merge(ft_strdup("+"), string);
 			arg->plus = 0;
 		}
@@ -55,10 +53,9 @@ static char	*put_width(char *string, t_args *arg)
 	return (string);
 }
 
-
 static char	*put_precision(char *string, t_args *arg)
 {
-	char *padding;
+	char	*padding;
 
 	string = minus(string, arg);
 	arg->precision -= ft_strlen(string);
@@ -66,7 +63,7 @@ static char	*put_precision(char *string, t_args *arg)
 	{
 		if (arg->plus)
 		{
-			arg->precision-=1;
+			arg->precision -= 1;
 			string = ft_str_merge(ft_strdup("+"), string);
 			arg->plus = 0;
 		}
@@ -78,9 +75,9 @@ static char	*put_precision(char *string, t_args *arg)
 	return (string);
 }
 
-static char *minus(char *string, t_args *arg)
+static char	*minus(char *string, t_args *arg)
 {
-	char *tmp;
+	char	*tmp;
 
 	if (*string == '-')
 	{
@@ -92,10 +89,10 @@ static char *minus(char *string, t_args *arg)
 	return (string);
 }
 
+// %i
 char	*translate_to_integer(t_args *arg, char *fmt, int value)
 {
-	// %i
-	char *integer;
+	char	*integer;
 
 	integer = ft_itoa(value);
 	integer = put_precision(integer, arg);

@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:39:46 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 21:22:40 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:51:24 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_str_merge(char *s1, char *s2)
 {
-	char *new;
-	size_t total;
+	size_t	total;
+	char	*new;
 
 	if (!s1 || !s2)
 	{

@@ -6,13 +6,13 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 04:13:51 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/23 23:35:05 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:35:56 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../ft_printf.h"
+#include	"../../ft_printf.h"
 
-void 	what_precision (t_args *arg, const char **format, va_list *vl)
+void	what_precision(t_args *arg, const char **format, va_list *vl)
 {
 	if (**format == '.')
 	{
@@ -20,7 +20,7 @@ void 	what_precision (t_args *arg, const char **format, va_list *vl)
 		*arg->argument++ = *(*format)++;
 		if (ft_isdigit(**format))
 		{
-			arg-> precision = 0;
+			arg->precision = 0;
 			while (ft_isdigit(**format))
 			{
 				arg->precision = (arg->precision * 10) + (**format - '0');

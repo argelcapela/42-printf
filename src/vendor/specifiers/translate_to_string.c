@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 17:47:30 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:44:51 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*put_width(char *string, t_args *arg)
 {
-	char *width;
+	char	*width;
 
 	arg->width -= ft_strlen(string);
 	if (arg->width > 0)
@@ -30,7 +30,7 @@ static char	*put_width(char *string, t_args *arg)
 
 static char	*put_precision(char *string, t_args *arg)
 {
-	char *tmp;
+	char	*tmp;
 
 	if (arg->dot && arg->precision > -1)
 	{
@@ -47,11 +47,10 @@ static char	*put_precision(char *string, t_args *arg)
 	return (string);
 }
 
-
+// %s
 char	*translate_to_string(t_args *arg, char *fmt, char *value)
 {
-	// %s
-	char *string;
+	char	*string;
 
 	if (!value)
 	{

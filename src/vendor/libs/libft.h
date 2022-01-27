@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 20:34:46 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 16:05:51 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:53:51 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ typedef struct s_list
 
 char	*ft_str_merge(char *s1, char *s2);
 char	*ft_chr_to_str(int c, size_t qtd);
-char	*ft_str_replace(char *str, char* search, char *replace);
+char	*ft_str_replace(char *str, char *search, char *replace);
 void	ft_free_ptr(void **ptr);
-char	*ft_uitoa_base(size_t n, char* base);
+char	*ft_uitoa_base(size_t n, char *base);
 
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);

@@ -6,18 +6,19 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 19:01:08 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:30:32 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+/*---------------------- libs----------------------------------------  */
+// ↓ has va_(start, arg, copy, end) - variadic functions
+# include <stdarg.h>
+# include <unistd.h>
+# include "vendor/libs/libft.h"
 
-# define NULL_PATTERN "___BANANA0_"
-# define PERCENT_PATTERN "___BANANA1_"
-/*---------------------- auxiliary macros -----------------------------  */
-# define FD 1
-
+/*---------------------- auxiliary vars -----------------------------  */
 typedef struct s_args
 {
 	int		negative;
@@ -33,17 +34,12 @@ typedef struct s_args
 	char	*argument;
 }	t_args;
 
-/*---------------------- libs----------------------------------------  */
-// ↓ has va_(start, arg, copy, end) - variadic functions
-# include <stdarg.h>
-# include <unistd.h>
-# include "vendor/libs/libft.h"
-# include <stdio.h>
-
+# define FD 1
+# define NULL_PATTERN "___BANANA0_"
+# define PERCENT_PATTERN "___BANANA1_"
 /*---------------------specifiers-----------------------------------  */
-
 // %%
-char	*translate_percent  (char *fmt);
+char	*translate_percent(char *fmt);
 
 // %c
 char	*translate_to_char(t_args *arg, char *fmt, int value);
@@ -55,16 +51,16 @@ char	*translate_to_string(t_args *arg, char *fmt, char *value);
 char	*translate_to_pointer(t_args *arg, char *fmt, unsigned long int value);
 
 // %i
-char	*translate_to_integer (t_args *arg, char *fmt, int value);
+char	*translate_to_integer(t_args *arg, char *fmt, int value);
 
 // %d
-char	*translate_to_decimal (t_args *arg, char *fmt, int value);
+char	*translate_to_decimal(t_args *arg, char *fmt, int value);
 
 // %u
-char	*translate_to_unsigned_int (t_args *arg, char *fmt,unsigned int value);
+char	*translate_to_unsigned_int(t_args *arg, char *fmt, unsigned int value);
 
 // %x,%X
-char	*translate_to_hexadecimal  (t_args *arg, char *fmt, size_t value);
+char	*translate_to_hexadecimal(t_args *arg, char *fmt, size_t value);
 
 /*---------------------utils----------------------------------------  */
 void	initialize_struct(t_args *arg);
@@ -74,13 +70,14 @@ void	destroy_struct(t_args *arg);
 char	*prepare_to_translation(const char *format, va_list *vl);
 char	understand_arg(t_args *arg, const char *format, va_list *vl);
 char	*understand_type(char type, char *fmt, t_args *arg, va_list *vl);
-void 	what_flags(t_args *arg, const char **format);
-void 	what_width(t_args *arg, const char **format, va_list *vl);
-void 	what_precision(t_args *arg, const char **format, va_list *vl);
+void	what_flags(t_args *arg, const char **format);
+void	what_width(t_args *arg, const char **format, va_list *vl);
+void	what_precision(t_args *arg, const char **format, va_list *vl);
 
-// Output formatted str
+// Display final result into FD
 int		print_to_fd(const char *fmt_translated, int fd);
+
 /*--------------------- start --------------------------------------  */
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 #endif

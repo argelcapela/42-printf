@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:21:06 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:48:03 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static char	*put_flags(char *hexadecimal, t_args *arg)
 
 static char	*put_width(char *string, t_args *arg)
 {
-	char *padding;
-	char ch;
+	char	*padding;
+	char	ch;
 
 	arg->width -= ft_strlen(string);
 	if (arg->width > 0)
@@ -33,7 +33,7 @@ static char	*put_width(char *string, t_args *arg)
 			ch = '0';
 		if (arg->hash)
 		{
-			arg->width -=2;
+			arg->width -= 2;
 			string = ft_str_merge(ft_strdup("0x"), string);
 			arg->hash = 0;
 		}
@@ -46,10 +46,9 @@ static char	*put_width(char *string, t_args *arg)
 	return (string);
 }
 
-
 static char	*put_precision(char *string, t_args *arg)
 {
-	char *padding;
+	char	*padding;
 
 	arg->precision -= ft_strlen(string);
 	if (arg->dot && arg->precision > -1)
@@ -60,12 +59,12 @@ static char	*put_precision(char *string, t_args *arg)
 	return (string);
 }
 
+// %x, %X
 char	*translate_to_hexadecimal(t_args *arg, char *fmt, size_t value)
 {
-	// %x, %X
-	char* hexadecimal;
-	size_t i;
-	size_t len;
+	char	*hexadecimal;
+	size_t	i;
+	size_t	len;
 
 	hexadecimal = ft_uitoa_base(value, "0123456789abcdef");
 	hexadecimal = put_precision(hexadecimal, arg);

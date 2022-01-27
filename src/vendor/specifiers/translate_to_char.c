@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 16:25:21 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:46:02 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*put_width(char *c, t_args *arg)
 {
-	char *width;
+	char	*width;
 
 	arg->width -= 1;
 	if (arg->width > 0)
@@ -28,11 +28,11 @@ static char	*put_width(char *c, t_args *arg)
 	return (c);
 }
 
+// %c
 char	*translate_to_char(t_args *arg, char *fmt, int value)
 {
-	// %c
-	char *c;
-	char *tmp;
+	char	*c;
+	char	*tmp;
 
 	c = ft_chr_to_str(value, 1);
 	c = put_width(c, arg);

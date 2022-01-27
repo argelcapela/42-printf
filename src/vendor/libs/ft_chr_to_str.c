@@ -6,16 +6,15 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 12:25:31 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 16:22:43 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:57:08 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_chr_to_str(int c, size_t qtd)
 {
-	char *str;
+	char	*str;
 
 	if (!c || !qtd)
 		return (NULL);

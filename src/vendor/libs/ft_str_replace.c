@@ -6,18 +6,18 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:47:50 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 16:23:17 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:53:10 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_replace(char* str, char* search, char* replace)
+char	*ft_str_replace(char *str, char *search, char *replace)
 {
-	int i;
-	int total;
-	char *found;
-	char *new;
+	int		i;
+	int		total;
+	char	*found;
+	char	*new;
 
 	if (!str || !search || !replace)
 	{

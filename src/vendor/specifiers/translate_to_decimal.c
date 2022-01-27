@@ -6,17 +6,17 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:17:06 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:49:35 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-static char *minus(char *string, t_args *arg);
+static char	*minus(char *string, t_args *arg);
 
 static char	*put_flags(char *string, t_args *arg, int value)
 {
-	char *sign;
+	char	*sign;
 
 	if (arg->plus && value > 0)
 	{
@@ -28,8 +28,8 @@ static char	*put_flags(char *string, t_args *arg, int value)
 
 static char	*put_width(char *string, t_args *arg)
 {
-	char *padding;
-	char ch;
+	char	*padding;
+	char	ch;
 
 	arg->width -= ft_strlen(string);
 	if (arg->width > 0)
@@ -40,7 +40,7 @@ static char	*put_width(char *string, t_args *arg)
 			ch = '0';
 		if (arg->plus)
 		{
-			arg->width-=1;
+			arg->width -= 1;
 			string = ft_str_merge(ft_strdup("+"), string);
 			arg->plus = 0;
 		}
@@ -53,10 +53,9 @@ static char	*put_width(char *string, t_args *arg)
 	return (string);
 }
 
-
 static char	*put_precision(char *string, t_args *arg)
 {
-	char *padding;
+	char	*padding;
 
 	string = minus(string, arg);
 	arg->precision -= ft_strlen(string);
@@ -64,7 +63,7 @@ static char	*put_precision(char *string, t_args *arg)
 	{
 		if (arg->plus)
 		{
-			arg->precision-=1;
+			arg->precision -= 1;
 			string = ft_str_merge(ft_strdup("+"), string);
 			arg->plus = 0;
 		}
@@ -73,13 +72,12 @@ static char	*put_precision(char *string, t_args *arg)
 	}
 	if (arg->negative)
 		string = ft_str_merge(ft_strdup("-"), string);
-
 	return (string);
 }
 
-static char *minus(char *string, t_args *arg)
+static char	*minus(char *string, t_args *arg)
 {
-	char *tmp;
+	char	*tmp;
 
 	if (*string == '-')
 	{
@@ -91,11 +89,10 @@ static char *minus(char *string, t_args *arg)
 	return (string);
 }
 
+// %d
 char	*translate_to_decimal(t_args *arg, char *fmt, int value)
 {
-
-	// %d
-	char *decimal;
+	char	*decimal;
 
 	decimal = ft_itoa(value);
 	decimal = put_precision(decimal, arg);

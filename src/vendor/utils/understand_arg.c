@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 03:15:49 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 15:26:26 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:32:44 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	understand_arg(t_args *arg, const char *format, va_list *vl)
 {
-	char *start_of_str;
+	char	*start_of_str;
 
 	arg->argument = ft_calloc(ft_strlen(format) + 1, sizeof(char));
 	start_of_str = arg->argument;

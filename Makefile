@@ -38,3 +38,6 @@ c:
 # bonus
 
 # targets to test my 42-printf-entrega files
+# clear && gcc -ggdb3 ${CFLAGS}  main.c libftprintf.a vendor/libs/libft.a && ./a.out
+#leak:
+#	valgrind --leak-check=full --show-leak-kinds=all ./a.out

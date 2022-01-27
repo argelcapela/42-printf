@@ -1,135 +1,96 @@
- #include <stdio.h> 
+#include "ft_printf.h"
+#include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-	int i;
-	char str[] = "argel capela";
 
-	/**------------------------ specifiers---------------------------------
-	 * Especifica qual o tipo de dado será passado como argumento do printf
-	 ***/
+// próprio printf
 
-	printf("/**------------------------ specifiers--------------------------------- **/\n");
-	printf("%%%%: %%\n"); // %
+	// (width + flag space and -)
+		ft_printf("\n\n(width + flag space and -):\n");
+		ft_printf("Meu:\n");
+		ft_printf("%5c\n", 'x');
+		ft_printf("%5s\n", "ar");
+		ft_printf("%5d\n", -10);
+		ft_printf("%5i\n", -10);
+		unsigned int u = 100000;
+		ft_printf("%5u\n", u);
+		ft_printf("%5x\n", -1000);
+		void *ptr;
+		ft_printf("%15p\n\n", &ptr);
 
-	// c (character)
-	char c = 'a';
-	printf("%%c: %c\n", c);
+		ft_printf("Libc:\n");
+		printf("%5c\n", 'x');
+		printf("%5s\n", "ar");
+		printf("%5d\n", -10);
+		printf("%5i\n", -10);
+		printf("%5u\n", u);
+		printf("%5x\n", -1000);
+		printf("%15p\n\n", &ptr);
 
-	// s (string)
-	char *s = "argel capela";
-	printf("%%s: %s\n", s);
+	// (flag hash in x and X)
+		ft_printf("\n\n(flag hash in x and X):\n");
+		ft_printf("Meu:\n");
+		ft_printf("%#7x\n", 1000);
+		ft_printf("%#7X\n\n", 1000);
 
-	// p (pointer)
-	void *p = NULL;
-	printf("%%p: %p\n", &p);
+		ft_printf("Libc:\n");
+		printf("%#7x\n", 1000);
+		printf("%#7X\n\n\n", 1000);
 
-	//------------------------------------------------
+	// (flag 0 in d,i,u,xX)
+		ft_printf("\n\n(flag 0 in d,i,u,xX):\n");
+		ft_printf("Meu:\n");
+		ft_printf("%05d\n", 10);
+		ft_printf("%05i\n", 10);
+		ft_printf("%05u\n", u);
+		ft_printf("%05x\n\n", 1000);
 
-	// i (integer)
-	i = 012;
-	printf("\n%%i: %i\n", i);
+		ft_printf("Libc:\n");
+		printf("%05d\n", 10);
+		printf("%05i\n", 10);
+		printf("%05u\n", u);
+		printf("%05x\n", 1000);
 
-	// d (decimal)
-	int d = 012;
-	printf("%%d: %d\n\n", 012);
+	// (flag + in d,i -> always show the signal)
+		ft_printf("\n\n(flag + in d,i -> always show the signal):\n");
+		ft_printf("Meu:\n");
+		ft_printf("%+5i\n", 10);
+		ft_printf("%-+5d\n", 10);
+		ft_printf("%-+5d\n", 10);
+		ft_printf("%+i\n\n\n", 10);
 
-	/*-------------------------------------------------
-	 * In printf, outputing data, i and d behaves
-	 * similar.
-	 *
-	 * In scanf, inputing data, d just accepts  a number
-	 * in base 10, if not, the input will receive garbage
-	 * value.
-	 *
-	 * and i receive value from octal, hexadecimal or
-	 * decimal base.
-	/*------------------------------------------------*/
+		printf("Libc:\n");
+		printf("%+5i\n", 10);
+		printf("%-+5d\n", 10);
+		printf("%-+5d\n", 10);
+		printf("%+i\n\n\n", 10);
 
-	// u (unsigned integer)
-	unsigned int u = 100000;
-	printf("%%u: %u\n", u);
+	// string precision
+		ft_printf("\n\nstring precision:\n");
+		ft_printf("Meu:\n");
+		ft_printf("%.30s\n", "argel capela");
 
-	// x (hexadecimal lowercase)
-	int x = 10;
-	printf("%%x: %x\n", x);
+		ft_printf("\nLibc:\n");
+		printf("%.30s", "argel capela\n\n");
 
-	// X (hexadecimal uppercase)
-	x = 10;
-	printf("%%X: %X\n", x);
+	//  precision in d,i,u,xX
+		ft_printf("\n\nprecision in d,i,u,xX:\n");
+		ft_printf("Meu:\n");
+		ft_printf("%.5d\n", -10);
+		ft_printf("%.5i\n", -10);
+		ft_printf("%.5u\n", -10);
+		ft_printf("%.5x\n", -10);
+		ft_printf("%.5x\n", -10);
 
-	printf("\n\n");
-
-
-	/**------------------------flags---------------------------------
-	 * Criam prefixos para os valores passados como argumento.
-	 * **/
-
-	/**------------------------width---------------------------------
-	 * Indica quantas vezes as flags ou prefixos (0) se repetem.
-	 * **/
-
-
-	printf("/**------------------------ flags and width--------------------------------- **/\n");
-
-
-	//** for Integers
-		// + or - (print a + sign before the number whatever it is positive or negative)
-		i = 10;
-		printf("\n+: %-i", i);
-
-		// (space)
-		i = 10;
-		printf("\n(space): % i\n", i);
-
-		/*
-		 * 0  - adiciona zeros antes do número
-		 *	  - só funciona com um width especificado
-		 *	  - a quantidade de zeros é equivalente a diferença entre o [width] * 	especificado e a quantidade de algarismos que número passado
-		 *	 como argumento possui.
-		 */
-		i = 10;
-		printf("\n0: %07i\n", i);
-
-		i = 10;
-		printf("\n0*: %0*i\n", 10, i);
-
-	//** for hexadecimal
-		// #
-		i = 10;
-		printf("\n#: %#X\n", i);
+		ft_printf("\nLibc:\n");
+		printf("%.5d\n", -10);
+		printf("%.5i\n", -10);
+		printf("%.5u\n", -10);
+		printf("%.5x\n", -10);
+		printf("%.5x\n\n\n", -10);
 
 
-	printf("\n\n");
-
-	/**------------------------precision---------------------------------
-	 * 'Define a quantidade de caracteres a ser printada ou o mínimo de caracteres digitados.
-	 *
-	 * Para d,i,u,x e X -> Define qual o mínimo de algarismos que o valor do argumento possui, caso o mesmo seja menor que o precision passado, o printf printa o valor com zeros a esquerda. Esses zeros são a diferença entre o precision e o valor do argumento.
-	 *
-	 * Para c -> não faz nada
-	 *
-	 * Para s -> define a quantidade de bytes que será printada do argumento passado.
-	 * **/
-	printf("/**------------------------ precision--------------------------------- **/\n");
-
-
-	//** for d, i, u, x, X (is equal to 0(number) -> Especifica o mínimo número de algarismos a ser digitado, se o argumento for menor que esse valor, é feito a diferença e é adiciona zeros a esquerda)
-		i = 10;
-		printf("\n%%.(number)i: %.5i \n", i);
-		printf("%%.*i: %.*i \n", 5, i);
-		i = 1234567;
-		printf("%%.(number)i: %.5i \n", i);
-
-	//** for s (Quantidade de bytes a ser printado, semelhante ao terceiro argumento do write(1, "argel capela", 5))
-		printf("%%.5s: %.5s \n", str);
-		printf("%%.*s: %.*s \n", 5, str);
-
-
-
-
-
-
-	printf("\n\n");
-
+	return(0);
 }

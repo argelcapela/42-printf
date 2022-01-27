@@ -1,30 +1,34 @@
+# Library final name requested by the mandatory
 NAME= libftprintf.a
-SRCS= ${wildcard vendor/utils/*.c } ${wildcard vendor/specifiers/*.c } ft_printf.c
-OBJS= ${SRCS:.c=.o}
-LIBFT= vendor/libs/libft.a
 
-CC = gcc
-CFLAGS =
-# -Wall -Wextra -Werror
-AR = @ar rcs
-RM = rm -f
+CC = clang
 
-${NAME}:${OBJS}
-		#make re -C vendor/libs
-		@${AR} ${NAME} ${OBJS} 1>/dev/null || true
-		@clear && gcc -ggdb3 ${CFLAGS}  main.c libftprintf.a vendor/libs/libft.a && ./a.out
-		@make clean 1>/dev/null || true
+CFLAGS = -Wall -Wextra -Werror
 
-leak:
-	valgrind --leak-check=full --show-leak-kinds=all ./a.out
+# Library Creator
+AR = ar rcs
 
-all: ${NAME}
+SRCS= ft_printf.c $(wildcard vendor/utils/*.c ) $(wildcard vendor/specifiers/*.c )
+
+# Short command to compile using $(CC) and $(CFLAGS) to all *.c files in $(SRCS)
+OBJS= $(SRCS:.c=.o)
+
+# 1 - After compile any c file to .o file
+# 2 - Make re libft library
+# 3 - Create libftprintf.a library
+$(NAME): $(OBJS)
+		$(MAKE) re -C vendor/libs
+		$(AR) $(NAME) $(OBJS)
+		clear
+		@echo "Success!"
+
+all: $(NAME)
 
 clean:
-		${RM} ${OBJS}
+		rm -f $(OBJS)
 
 fclean:	clean
-		${RM} ${NAME} a.out
+		rm -f $(NAME) a.out
 
 re:		fclean all
 
