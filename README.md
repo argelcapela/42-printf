@@ -110,7 +110,7 @@
 <br><br>
 
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
-<h2 id="algoritmo">Qual a lógica do Printf (😈 Com Bônus 😈)?</h2>
+<a href="https://www.freebsd.org/cgi/man.cgi?printf" target="_BLANK"><h2 id="algoritmo">Qual a lógica do Printf (😈 Com Bônus 😈)?</h2></a>
 <b>Passos Essências para se construir o Printf: </b>
 	<br>
 	<ol>
