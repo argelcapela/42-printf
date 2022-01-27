@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 21:24:42 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:47:30 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,26 @@ static char	*put_width(char *string, t_args *arg)
 	return (string);
 }
 
+static char	*put_precision(char *string, t_args *arg)
+{
+	char *tmp;
+
+	if (arg->dot && arg->precision > -1)
+	{
+		tmp = ft_substr(string, 0, arg->precision);
+		ft_free_ptr((void **) &string);
+		string = tmp;
+	}
+	if (arg->dot && arg->precision <= 0)
+	{
+		tmp = ft_strdup("");
+		ft_free_ptr((void **) &string);
+		string = tmp;
+	}
+	return (string);
+}
+
+
 char	*translate_to_string(t_args *arg, char *fmt, char *value)
 {
 	// %s
@@ -40,6 +60,7 @@ char	*translate_to_string(t_args *arg, char *fmt, char *value)
 	}
 	else
 		string = ft_strdup(value);
+	string = put_precision(string, arg);
 	string = put_width(string, arg);
 	fmt = ft_str_replace(fmt, arg->argument, string);
 	ft_free_ptr((void *) &string);

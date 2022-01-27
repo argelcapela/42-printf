@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 17:44:46 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:01:08 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*translate_to_decimal (t_args *arg, char *fmt, int value);
 char	*translate_to_unsigned_int (t_args *arg, char *fmt,unsigned int value);
 
 // %x,%X
-char	*translate_to_hexadecimal  (t_args *arg, char *fmt, unsigned int value);
+char	*translate_to_hexadecimal  (t_args *arg, char *fmt, size_t value);
 
 /*---------------------utils----------------------------------------  */
 void	initialize_struct(t_args *arg);

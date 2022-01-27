@@ -6,14 +6,14 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 21:41:09 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/25 16:17:17 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 20:35:13 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 #include <stdio.h>
 
-static int	len(int n)
+static int	len(size_t n)
 {
 	int	len;
 
@@ -35,7 +35,7 @@ static void	convert_base(size_t n, char *str, int *i, char *base)
 	size_t nb;
 
 	nb = ft_strlen(base);
-	if (n > nb && n)
+	if (n >= nb && n)
 	{
 		convert_base(n / nb, str, i, base);
 		convert_base(n % nb, str, i, base);
@@ -50,7 +50,7 @@ char	*ft_uitoa_base(size_t n, char *base)
 	char	*str;
 	int		i;
 
-	str = ft_calloc(len(n) + 1, sizeof(char));
+	str = malloc(len(n) * sizeof(char) + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

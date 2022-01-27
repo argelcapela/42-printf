@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:47:50 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 20:42:40 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:23:17 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ char	*ft_str_replace(char* str, char* search, char* replace)
 	if (!str || !search || !replace)
 	{
 		ft_free_ptr((void *) &str);
-		return (0);
+		return (NULL);
 	}
 	found = ft_strnstr(str, search, ft_strlen(str));
 	if (!found)
 		return (str);
 	total = ft_strlen(str) - ft_strlen(search) + ft_strlen(replace) + 1;
-	new = malloc(sizeof(char) * total);
+	new = (char *)malloc(sizeof(char) * total);
+	if (!new)
+		return (NULL);
 	ft_strlcpy(new, str, (found - str) + 1);
 	ft_strlcat(new, replace, total);
 	i = (found - str) + ft_strlen(search);

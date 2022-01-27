@@ -6,22 +6,23 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 12:25:31 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/26 19:45:47 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:22:43 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_chr_to_str(char c, size_t qtd)
+char	*ft_chr_to_str(int c, size_t qtd)
 {
 	char *str;
 
-	if (!c)
+	if (!c || !qtd)
 		return (NULL);
-	str = malloc(sizeof(char) * qtd);
+	str = malloc((sizeof(char) * qtd) + 1);
 	if (!str)
 		return (NULL);
 	ft_memset(str, c, qtd);
+	str[qtd] = '\0';
 	return (str);
 }

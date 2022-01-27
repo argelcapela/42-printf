@@ -16,7 +16,7 @@ ${NAME}:${OBJS}
 		@make clean 1>/dev/null || true
 
 leak:
-	valgrind --leak-check=full --show-leak-kinds=all ./a.out 
+	valgrind --leak-check=full --show-leak-kinds=all ./a.out
 
 all: ${NAME}
 

@@ -3,7 +3,9 @@
 
 int main(void)
 {
-	char *new = ft_chr_to_str('a', 5);
-	printf("%s", new);
+	unsigned int n = -10;
+	size_t convert = n;
+	char *resposta = ft_uitoa_base(convert, "0123456789abcdef");
+	free(resposta);
 	return (0);
 }
