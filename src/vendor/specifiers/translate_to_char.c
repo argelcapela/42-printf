@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:46:02 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 17:17:44 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,12 @@ char	*translate_to_char(t_args *arg, char *fmt, int value)
 	char	*c;
 	char	*tmp;
 
-	c = ft_chr_to_str(value, 1);
+	if (value == 0)
+	{
+		c = ft_strdup(TOKENIZATION_NULL);
+	}
+	else
+		c = ft_chr_to_str(value, 1);
 	c = put_width(c, arg);
 	tmp = ft_str_replace(fmt, arg->argument, c);
 	ft_free_ptr((void *) &c);

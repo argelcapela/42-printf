@@ -6,15 +6,15 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:48:03 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 19:34:13 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-static char	*put_flags(char *hexadecimal, t_args *arg)
+static char	*put_flags(char *hexadecimal, t_args *arg, size_t value)
 {
-	if (arg->hash)
+	if (arg->hash && value > 0)
 		hexadecimal = ft_str_merge(ft_strdup("0x"), hexadecimal);
 	return (hexadecimal);
 }
@@ -51,7 +51,7 @@ static char	*put_precision(char *string, t_args *arg)
 	char	*padding;
 
 	arg->precision -= ft_strlen(string);
-	if (arg->dot && arg->precision > -1)
+	if (arg->dot && arg->precision > 0)
 	{
 		padding = ft_chr_to_str('0', arg->precision);
 		string = ft_str_merge(padding, string);
@@ -69,7 +69,7 @@ char	*translate_to_hexadecimal(t_args *arg, char *fmt, size_t value)
 	hexadecimal = ft_uitoa_base(value, "0123456789abcdef");
 	hexadecimal = put_precision(hexadecimal, arg);
 	hexadecimal = put_width(hexadecimal, arg);
-	hexadecimal = put_flags(hexadecimal, arg);
+	hexadecimal = put_flags(hexadecimal, arg, value);
 	len = 0;
 	len = ft_strlen(hexadecimal);
 	if (arg->type == 'X')

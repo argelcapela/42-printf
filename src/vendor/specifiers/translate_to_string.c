@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:44:51 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 20:58:34 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*put_precision(char *string, t_args *arg)
 {
 	char	*tmp;
 
-	if (arg->dot && arg->precision > -1)
+	if (arg->dot && arg->precision > 0)
 	{
 		tmp = ft_substr(string, 0, arg->precision);
 		ft_free_ptr((void **) &string);
@@ -53,10 +53,7 @@ char	*translate_to_string(t_args *arg, char *fmt, char *value)
 	char	*string;
 
 	if (!value)
-	{
 		string = ft_strdup("(null)");
-		return (string);
-	}
 	else
 		string = ft_strdup(value);
 	string = put_precision(string, arg);

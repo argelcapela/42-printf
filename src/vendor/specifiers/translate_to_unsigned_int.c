@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:40:55 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 19:13:54 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*put_precision(char *string, t_args *arg)
 	char	*padding;
 
 	arg->precision -= ft_strlen(string);
-	if (arg->dot && arg->precision > -1)
+	if (arg->dot && arg->precision > 0)
 	{
 		padding = ft_chr_to_str('0', arg->precision);
 		string = ft_str_merge(padding, string);

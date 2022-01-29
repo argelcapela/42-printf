@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:30:32 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 16:56:07 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include "vendor/libs/libft.h"
+# include <stdio.h>
 
 /*---------------------- auxiliary vars -----------------------------  */
 typedef struct s_args
@@ -35,8 +36,8 @@ typedef struct s_args
 }	t_args;
 
 # define FD 1
-# define NULL_PATTERN "___BANANA0_"
-# define PERCENT_PATTERN "___BANANA1_"
+# define TOKENIZATION_NULL    "___BANANA0_"
+# define TOKENIZATION_PERCENT "___BANANA1_"
 /*---------------------specifiers-----------------------------------  */
 // %%
 char	*translate_percent(char *fmt);
@@ -75,7 +76,7 @@ void	what_width(t_args *arg, const char **format, va_list *vl);
 void	what_precision(t_args *arg, const char **format, va_list *vl);
 
 // Display final result into FD
-int		print_to_fd(const char *fmt_translated, int fd);
+int		print_to_fd(char *fmt, int fd);
 
 /*--------------------- start --------------------------------------  */
 int		ft_printf(const char *format, ...);

@@ -1,35 +1,87 @@
-# Library final name requested by the mandatory
-NAME= libftprintf.a
+#
+#  😈 Printf with Bonus - Makefile 👿
+#  😎 By ARGEL CAPELA 👨‍💻
+#
 
-CC = clang
+# Name of the project
+OUTPUT_NAME =   libftprintf.a
 
-CFLAGS = -Wall -Wextra -Werror
+# .c files
+SRCS =          ft_printf.c                          \
+								$(wildcard vendor/utils/*.c)         \
+								$(wildcard vendor/specifiers/*.c)
 
-# Library Creator
-AR = ar rcs
+# .h file
+HEADER =        ft_printf.h
 
-SRCS= ft_printf.c $(wildcard vendor/utils/*.c ) $(wildcard vendor/specifiers/*.c )
+# .o files
+OBJS =          $(SRCS:.c=.o)
 
-# Short command to compile using $(CC) and $(CFLAGS) to all *.c files in $(SRCS)
-OBJS= $(SRCS:.c=.o)
+# Compiler
+CC =            gcc
 
-# 1 - After compile any c file to .o file
-# 2 - Make re libft library
-# 3 - Create libftprintf.a library
-$(NAME): $(OBJS)
-		$(MAKE) re -C vendor/libs
-		$(AR) $(NAME) $(OBJS)
-		clear
-		@echo "Success!"
+# Flags
+CFLAGS =
+#-Wall   \
+				-Wextra \
+				-Werror \
+				-ggdb3
 
-all: $(NAME)
+# Libft Settings
+LIBFT.A =        $(LIBFT_PATH)/libft.a
+LIBFT_PATH =     vendor/libs
 
+# Create Library
+AR =             ar
+ARFLAGS =        -rcs
+
+# Remove files
+RM =             rm -rf
+
+#
+# 🔨Compilation and Linking 🔌
+#
+
+# When make is called
+all:						$(OUTPUT_NAME)
+								@$(MAKE) clean
+
+# When make bonus is called
+bonus:					all
+
+# Main libftprintf.a constructor:   \
+	1) Compile libft.a\
+	2) Compile objects files.o\
+	3) Check if header exists\
+	4) Use cp to copy libft.a from it path to Makefile's directory with $(OUTPUT_NAME)'name\
+	5) AR creates a library called $(OUTPUT_NAME) containing all files.o present in $(OBJS).\
+	6) The important detail here is that, $(OUTPUT_NAME) already exist containing the .o libft's files, but the ARFLAGS -r, do the magic, it verify if already exist a library with $(OUTPUT_NAME), if exists, just add the new .o files, so, the printf .o files are added. \
+	7) Finally the Library libftprintf.a is complete with printf and libft .o files; 😎
+$(OUTPUT_NAME):	$(LIBFT.A) $(OBJS) $(HEADER)
+								@cp $(LIBFT.A) $(OUTPUT_NAME)
+								@$(AR) $(ARFLAGS) $(OUTPUT_NAME) $(OBJS) $(HEADER)
+
+# Compile or recompile Libft.a library
+$(LIBFT.A):
+								$(MAKE) re -C $(LIBFT_PATH)
+
+# $(OBJS) directive is called and %.o automatically assume this paper of execute one directive for each object inside $(OBJS);  % get the name until dot(.); So, the same name can be used both as .c files or .o files; the command line then compiles each object; $< represents %.c, so all c files in SRCS, and  $@ = represents all $(OBJS);
+%.o: 						%.c $(HEADER)
+								$(CC) $(CFLAGS) -c $<	-o $@
+
+# Cleaning .o files
 clean:
-		rm -f $(OBJS)
+								$(RM) $(OBJS) *.h.gch
 
-fclean:	clean
-		rm -f $(NAME) a.out
+# Cleaning everything
+fclean:					clean
+								$(RM) $(OUTPUT_NAME)
 
-re:		fclean all
+# Re-making everything
+re:							fclean all
 
-.PHONY:		all clean fclean re
+# Indicates that:                                                   \
+	1) The following targets don't create files with its own names;   \
+	2) If some of them create a file with it's own name, they executes regardless it's prerequisite have updates or not; \
+Then in few words, .PHONY make these targets avoit problems with file name.
+.PHONY:					all bonus clean fclean re

@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/27 21:45:35 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 17:41:53 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ char	*translate_to_pointer(t_args *arg, char *fmt, unsigned long int value)
 	char	*pointer;
 
 	if (!value)
-	{
 		pointer = ft_strdup("(nil)");
-		return (pointer);
+	else
+	{
+		pointer = ft_uitoa_base(value, "0123456789abcdef");
+		pointer = ft_str_merge(ft_strdup("0x"), pointer);
 	}
-	pointer = ft_uitoa_base(value, "0123456789abcdef");
-	pointer = ft_str_merge(ft_strdup("0x"), pointer);
 	pointer = put_width(pointer, arg);
 	fmt = ft_str_replace(fmt, arg->argument, pointer);
 	ft_free_ptr((void *) &pointer);
