@@ -16,4 +16,5 @@ tb:
 
 c:
 	@$(MAKE) fclean -C ./src
+	@$(MAKE) fclean -C ./src/vendor/libs
 	rm *.out
