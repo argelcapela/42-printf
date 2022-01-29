@@ -8,6 +8,8 @@ l:
 	@clear
 	@valgrind --leak-check=full ./a.out
 
+t:
+	@$(MAKE) a -C ./src/tripoulle
 tm:
 	@$(MAKE) m -C ./src/tripoulle
 tb:

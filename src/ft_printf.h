@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/29 16:56:07 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 22:20:02 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include "vendor/libs/libft.h"
-# include <stdio.h>
 
 /*---------------------- auxiliary vars -----------------------------  */
 typedef struct s_args

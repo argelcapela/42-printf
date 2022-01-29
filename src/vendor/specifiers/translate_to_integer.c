@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/29 21:59:36 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/29 22:10:49 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ char	*translate_to_integer(t_args *arg, char *fmt, int value)
 	integer = ft_itoa(value);
 	integer = put_precision(integer, arg, value);
 	integer = put_width(integer, arg, value);
-	integer = put_flags(decimal, arg, value, 0);
+	integer = put_flags(integer, arg, value, 0);
 	fmt = ft_str_replace(fmt, arg->argument, integer);
 	ft_free_ptr((void **) &integer);
 	return (fmt);
