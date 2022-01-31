@@ -121,7 +121,7 @@
             <th colspan=3><h4><a href="https://www.freebsd.org/cgi/man.cgi?printf" target="_BLANK">ft_printf</a></h4></th>
         </tr>
         <tr>
-            <th>O que ela faz?</th>
+            <th>Que negócio é esse mermão? 🙄</th>
             <th>Protótipo</th>
 	    <th>Sintaxe</th>
         </tr>
@@ -129,7 +129,21 @@
 
 <tbody>
         <tr>
-            <td>...</td>
+            <td>
+		<p>"Como diria Jack Estripador, vamos por partes":</p>
+<ul>
+	<li>printf, 'print formatted', 'impressão formatada'</li>
+	<li>Ele basicamente 'escreve' uma mensagem na tela.</li>
+	<li>O primeiro argumento do printf é uma string, chamada de 'format specifier', ou "especificador de formato", essa string linda vai indicar 'COMO' a nossa mensagem na tela será exibida. Por exemplo podemos %d, isso signfica que o próximo argumento deve ser um número inteiro, etc.</li>
+	<li>Dentro do 'format specifier' , nós temos substrings chamadas de argumentos, que começam em % e terminam em uma letra 'specifier'. Cada argumento tem a seguinte sintaxe brother, %[flags][width][.precision]specifier, cada um representa um tipo de dado diferente que será 'printado na tela'. Que?? 😯 Na prática fica mais fácil, só aceita que dói menos por enquanto valeu? 😎</li>
+	<li>Dentro do 'format specifier', nós podemos ter 3 coisas:</li>
+	<ol>
+		<li>'Format specifier Argument': %[flags][width][.precision]specifier</li>
+		<li>'Character Scape': tipo, \n que adiciona uma quebra de linha.</li>
+		<li>'Plain characters': Texto comum.</li>
+	</ol>
+</ul>
+	    </td>
             <td>ft_printf(const char* format, ...)</td>
 	    <td><code>%[flags][width][.precision]specifier</code></td>
         </tr>
