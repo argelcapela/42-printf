@@ -6,7 +6,7 @@
 #    By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/31 01:45:50 by acapela-          #+#    #+#              #
-#    Updated: 2022/01/31 01:56:06 by acapela-         ###   ########.fr        #
+#    Updated: 2022/01/31 19:15:32 by acapela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ OBJS =          $(SRCS:.c=.o)
 CC =            gcc
 
 # Flags
-CFLAGS =		-Wall   \
+CFLAGS =
+#		-Wall   \
 				-Wextra \
 				-Werror
 

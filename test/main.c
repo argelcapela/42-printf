@@ -176,8 +176,12 @@ int main(void)
 		printf("%.5x\n\n\n", -10);
 
 		printf("\n\n\n\n");
-
 		//ft_printf("%+5i\n", 10);
+
+
+		printf("%+ .8d\n", 10);
+
+
 
 	return(0);
 }

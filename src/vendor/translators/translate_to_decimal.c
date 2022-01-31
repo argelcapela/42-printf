@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/31 03:26:35 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/31 19:20:39 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ static char	*put_width(char *string, t_fs_arg *arg, int value)
 	return (string);
 }
 
+/* remove_minus if the value is negative, holds the minus
+sign to be added after*/
+/* put_flags add (+) or (just one space, when the flag is specified
+with a specific width, the space added is just one)
+so this helps to have a join of precision and flags*/
 static char	*put_precision(char *string, t_fs_arg *arg, int value)
 {
 	char	*padding;

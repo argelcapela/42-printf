@@ -4,6 +4,12 @@ all:
 	@clear
 	@./a.out
 
+mb:
+	@$(MAKE) -C ./src
+	@gcc  test/mainb.c src/libftprintf.a
+	@clear
+	@./a.out
+
 l:
 	@clear
 	@valgrind --leak-check=full ./a.out
