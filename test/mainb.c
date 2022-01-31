@@ -4,7 +4,7 @@
 
 int main(void)
 {
-
+  ft_printf("%-9d", 6);
 	return (0);
 }
 
