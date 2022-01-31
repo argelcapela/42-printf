@@ -128,10 +128,10 @@ int main(void)
 		ft_printf("\n\n(flag + in d,i -> always show the signal):\n");
 		ft_printf("Meu:\n");
 
-		//ft_printf("%-+5d\n", 10);
-		//ft_printf("%-+5d\n", 10);
-		//ft_printf("%+i\n\n\n", 10);
-		//ft_printf("%+d\n\n", 0);
+		ft_printf("%-+5d\n", 10);
+		ft_printf("%-+5d\n", 10);
+		ft_printf("%+i\n\n\n", 10);
+		ft_printf("%+d\n\n", 0);
 		printf("%+d\n\n", 0);
 		printf("Libc:\n");
 		printf("%+5i\n", 10);
@@ -175,11 +175,10 @@ int main(void)
 		printf("%.5x\n", -10);
 		printf("%.5x\n\n\n", -10);
 
-		printf("\n\n\n\n");
-		//ft_printf("%+5i\n", 10);
+		ft_printf("%+5i\n", 10);
 
 
-		printf("%+ .8d\n", 10);
+
 
 
 

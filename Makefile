@@ -1,13 +1,13 @@
 all:
 	@$(MAKE) -C ./src
 	@gcc  test/main.c src/libftprintf.a
-	@clear
+#	@clear
 	@./a.out
 
 mb:
 	@$(MAKE) -C ./src
 	@gcc  test/mainb.c src/libftprintf.a
-	@clear
+#	@clear
 	@./a.out
 
 l:

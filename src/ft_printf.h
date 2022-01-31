@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 03:14:00 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/31 03:27:45 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/31 21:17:29 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct format_string_argument
 	int		dot;
 	int		precision;
 	int		negative;
+	int		has_visible_signal;
+	char	visible_signal;
 }	t_fs_arg;
 
 /*---------------------translators-----------------------------------  */
@@ -79,7 +81,9 @@ char	*translate_to_unsigned_int(t_fs_arg *arg, char *fmt,
 // %x,%X
 char	*translate_to_hexadecimal(t_fs_arg *arg, char *fmt, size_t value);
 
-// Help with negative numbers exibition.
+// Help identifying if the value inputted in negative or if the flag
+// + is activated, because it affects width treatment
+char	*has_visible_signal(char *string, t_fs_arg *arg);
 char	*remove_minus(char *string, t_fs_arg *arg);
 
 /*---------------------utils----------------------------------------  */
