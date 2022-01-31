@@ -1,6 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/31 01:45:50 by acapela-          #+#    #+#              #
+#    Updated: 2022/01/31 01:56:06 by acapela-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #
 #  😈 Printf with Bonus - Makefile 👿
-#  😎 By ARGEL CAPELA 👨‍💻
 #
 
 # Name of the project
@@ -8,8 +19,8 @@ OUTPUT_NAME =   libftprintf.a
 
 # .c files
 SRCS =          ft_printf.c                          \
-								$(wildcard vendor/utils/*.c)         \
-								$(wildcard vendor/specifiers/*.c)
+				$(wildcard vendor/base/*.c)         \
+				$(wildcard vendor/translators/*.c)
 
 # .h file
 HEADER =        ft_printf.h
@@ -21,15 +32,13 @@ OBJS =          $(SRCS:.c=.o)
 CC =            gcc
 
 # Flags
-CFLAGS =
-#-Wall   \
+CFLAGS =		-Wall   \
 				-Wextra \
-				-Werror \
-				-ggdb3
+				-Werror
 
 # Libft Settings
 LIBFT.A =        $(LIBFT_PATH)/libft.a
-LIBFT_PATH =     vendor/libs
+LIBFT_PATH =     vendor/libft_plusplus
 
 # Create Library
 AR =             ar

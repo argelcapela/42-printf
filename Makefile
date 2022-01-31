@@ -9,24 +9,24 @@ l:
 	@valgrind --leak-check=full ./a.out
 
 t:
-	@$(MAKE) a -C ./src/tripoulle
+	@$(MAKE) a -C ./test/tripoulle
 tm:
-	@$(MAKE) m -C ./src/tripoulle
+	@$(MAKE) m -C ./test/tripoulle
 tb:
-	@$(MAKE) b -C ./src/tripoulle
+	@$(MAKE) b -C ./test/tripoulle
 
 
 c:
 	@$(MAKE) fclean -C ./src
-	@$(MAKE) fclean -C ./src/vendor/libs
+	@$(MAKE) fclean -C ./src/vendor/libft_plusplus
 	rm *.out
 
 n:
 	@clear
 	@norminette ./src/ft_prin*                \
-               ./src/vendor/utils/*        \
-               ./src/vendor/specifiers/*   \
-               ./src/vendor/libs/*.c         \
-               ./src/vendor/libs/*.h
+               ./src/vendor/base/*        \
+               ./src/vendor/translators/*   \
+               ./src/vendor/libft_plusplus/*.c         \
+               ./src/vendor/libft_plusplus/*.h
 
 .PHONY: all, l, tm, tb, c, n

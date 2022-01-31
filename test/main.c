@@ -4,6 +4,9 @@
 
 int main(void)
 {
+	ft_printf("%.2d\n", 2);
+
+
 	/*
 	ft_printf("% s", "");
 	ft_printf(" % 1s", "");
@@ -15,7 +18,7 @@ int main(void)
 	ft_printf(" % s % s % s % s ", " - ", "", "4", "");
 	ft_printf(" % s % s % s % s % s ", " - ", "", "4", "", "2 ");*/
 
-	ft_printf(" % d \n", 10);
+	/*ft_printf(" % d \n", 10);
 	ft_printf(" % d \n", 11);
 	ft_printf(" % d \n", 15);
 	ft_printf(" % d \n", 16);
