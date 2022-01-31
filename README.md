@@ -171,7 +171,13 @@
             <td align="center">-</td>
 	    <td>Todos que estão usando a flag (space), ou tem algum tipo de espaço a esquerda.</td>
             <td>Na net, é descrito como 'Left Adjustment', ai eu não tinha entendido NAAADAAA 🙄😡. Mas basicamente, se um argumento printado tem espaços a esquerda, e nós usamos - como flag, o valor a ser printado vai colar no canto esquerdo e o espaço vai parar no lado direito, é como uma inversão saca? Isso cria um efeito de alinhamento esquerdo. Agora sim faz sentido né? 🤩</td>
-	    <td></td>
+	    <td>
+<ol>
+<li>ft_printf("%-8i", -10);<br>
+-10(space)(space)(space)(space)
+</li>	
+</ol>
+	   </td>
 </tr>
 	
 <tr>
@@ -182,8 +188,8 @@
 	    <td align="left"> 
 <ol>
 <li>ft_printf("%d", 10);<br>
-+10
 </li>
+<br>
 <li>ft_printf("%d", -10);<br>
 -10
 </li>
@@ -195,21 +201,57 @@
             <td align="center">#</td>
 	    <td>x, X</td>
             <td>Adiciona 0x, ou 0X antes do resultado printado, se o mesmo é diferente de 0.</td>
-	    <td></td>
+	    <td>
+<ol>
+<li>ft_printf("%x\n", 10);<br>
+a<br>
+</li>
+<br>
+<li>ft_printf("%#x\n", 10);<br>
+0xa
+</li>
+</ol>  
+	    </td>
 </tr>
 	
 <tr>
             <td align="center">(space)</td>
 	    <td>all</td>
             <td>Adiciona um espaço antes do resultado printado. Quando um width é especificado, a quantidade de espaços é igual a diferença(-) entre o valor do with e a quantidade de caracteres ou algarismos(se tiver sinal sendo exibido, também conta) que está sendo printado.</td>
-	    <td></td>
+	    <td>
+		*(space) é um backspace msm kk ' '
+<ol>
+<li>ft_printf("% 5d", 10);<br>
+(space)10
+</li>
+<br>
+<li>ft_printf("% 8i", -10);<br>
+(space)(space)(space)(space)-10
+</li>
+<br>
+<li>ft_printf("%8i", -10);<br>
+(space)(space)(space)(space)-10
+</li>
+</ol>  
+		    
+	    </td>
 </tr>
 	
 <tr>
             <td align="center">0</td>
             <td>d, i</td>
 	    <td>É parecido com o (space) mas trocando espaços por zeros. Basicamente ele adiciona zeros a esquerda do número printado. A quantidade de zeros é igual a diferença entre o width especificado e a quantidade de algarismos(contando com o sinal, se ele é visível). Diferente de (space), colocando um só 0 antes do 'specifier' não adiciona 1 zero.</td>
-	    <td></td>
+	    <td>
+<ol>
+<li>ft_printf("%05d", 10);<br>
+00010
+</li>
+<br>
+<li>ft_printf("%08i", -10);<br>
+-0000010
+</li>
+</ol>  
+	    </td>
 </tr>
 </tbody>
 <table>
@@ -269,7 +311,7 @@
             <th colspan=3><h4>Specifiers</h4></th>
         </tr>
         <tr>
-            <th>'Format Specifier'</th>
+            <th>Letra (representa um tipo de dado a ser printado)</th>
             <th>Descrição</th>
         </tr>
     </thead>
@@ -310,32 +352,15 @@
 </table>
 	
 
-<!--
-<b>Passos Essências para se construir o Printf: </b>
-	<br>
-	<ol>
-<br>
-<i>Mandatório:</i>
-		<li>...</li>
-
-		<br>
-<i>Bônus:</i>
-		<li>...</li>
-	</ol>
--->
-	
-	
-	
 <br><br><br><br>
 <b>Essa foi a minha lógica para o meu printf, tendo como base os pontos acima:</b>
 <p>Não é a melhor de todas, mas foi como desenvolvi. #SempreAprendendo! 😁✌</p>
-<img src="#" alt="Fluxograma printf"> 
+<img src="#" alt="Fluxograma printf"><br> 
 <a href="https://miro.com/app/board/uXjVOUSeK6A=/?invite_link_id=432239742834">Clique aqui para uma melhor visualização</a>
 <br><br>
 	
 <h2 id="bases">Partiu dominar a conversão entre bases? 😎👌</h2>
-<b>...</b>
-<p>...</p>
+
 
 	
 	
