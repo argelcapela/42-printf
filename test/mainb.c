@@ -5,8 +5,8 @@
 int main(void)
 {
 
-	ft_printf("%+ .8d\n", 10);
-	printf("% .8d\n", 10);
+	ft_printf("%-5i", 10);
+
 
 	return (0);
 }
