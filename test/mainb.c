@@ -5,6 +5,8 @@
 int main(void)
 {
 
+  printf(" %-3d ", 1);
+	printf(" %-4d ", 9);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 03:05:43 by acapela-          #+#    #+#             */
-/*   Updated: 2022/02/01 00:00:58 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/02/01 00:02:00 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	initialize_struct(t_fs_arg *arg)
 	arg->precision = 0;
 	arg->type = 0;
 	arg->argument = NULL;
-	arg->has_visible_type = 0;
-	arg->visible_type = 0;
+	arg->has_visible_signal = 0;
+	arg->visible_signal = 0;
 }
