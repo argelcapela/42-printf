@@ -5,7 +5,7 @@
 int main(void)
 {
 
-	ft_printf("%+5d", 10);
+	ft_printf("%04d", 9);
 
 	return (0);
 }

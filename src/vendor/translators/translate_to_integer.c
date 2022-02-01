@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/02/01 03:26:02 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/02/01 03:48:29 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*put_width(char *string, t_fs_arg *arg)
 		else if (arg->minus == 1)
 			string = ft_str_merge(string, ft_chr_to_str(' ', arg->width));
 	}
-	else if (arg->precision == 0 && arg->zero == 1 && arg->width > 0)
+	else if (arg->zero == 1 && arg->width > 0)
 		string = ft_str_merge(ft_chr_to_str('0', arg->width), string);
 	return (string);
 }
