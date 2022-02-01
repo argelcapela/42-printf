@@ -52,8 +52,7 @@ RM =             rm -rf
 #
 
 # When make is called
-all:						$(OUTPUT_NAME)
-								@$(MAKE) clean
+all:					$(OUTPUT_NAME)
 
 # When make bonus is called
 bonus:					all
@@ -72,7 +71,7 @@ $(OUTPUT_NAME):	$(LIBFT.A) $(OBJS) $(HEADER)
 
 # Compile or recompile Libft.a library
 $(LIBFT.A):
-								$(MAKE) re -C $(LIBFT_PATH)
+								$(MAKE) -C $(LIBFT_PATH)
 
 # $(OBJS) directive is called and %.o automatically assume this paper of execute one directive for each object inside $(OBJS);  % get the name until dot(.); So, the same name can be used both as .c files or .o files; the command line then compiles each object; $< represents %.c, so all c files in SRCS, and  $@ = represents all $(OBJS);
 %.o: 						%.c $(HEADER)
@@ -80,11 +79,11 @@ $(LIBFT.A):
 
 # Cleaning .o files
 clean:
-								$(RM) $(OBJS) *.h.gch
+								$(RM) $(OBJS) *.h.gch vendor/libft_plusplus/*.o
 
 # Cleaning everything
 fclean:					clean
-								$(RM) $(OUTPUT_NAME)
+								$(RM) $(OUTPUT_NAME) vendor/libft_plusplus/libft.a
 
 # Re-making everything
 re:							fclean all
@@ -93,4 +92,4 @@ re:							fclean all
 	1) The following targets don't create files with its own names;   \
 	2) If some of them create a file with it's own name, they executes regardless it's prerequisite have updates or not; \
 Then in few words, .PHONY make these targets avoit problems with file name.
-.PHONY:					all bonus clean fclean re
+.PHONY:					clean fclean re
