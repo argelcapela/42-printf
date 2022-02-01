@@ -179,9 +179,5 @@ int main(void)
 		ft_printf("%+5d\n", 10);
 		printf("%+5d\n", 10);
 
-
-
-
-
 	return(0);
 }
