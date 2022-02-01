@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/02/01 02:46:12 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/02/01 03:18:56 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ static char	*put_width(char *string, t_fs_arg *arg)
 	arg->width -= ft_strlen(string);
 	if (arg->has_visible_signal == 1)
 		arg->width--;
-	if ((arg->precision > 0 && arg->width > 0)
-		|| (arg->precision == 0 && arg->zero == 0 && arg->width > 0
-		&& arg->space == 1) || arg->space == 0)
+	if ((arg->precision > 0 && arg->width > 0) || arg->width > 0)
 	{
 		if (arg->has_visible_signal == 1)
 		{

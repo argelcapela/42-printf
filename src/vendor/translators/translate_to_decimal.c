@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 06:35:02 by acapela-          #+#    #+#             */
-/*   Updated: 2022/02/01 02:45:49 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/02/01 03:17:36 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ static char	*put_flags(char *string, t_fs_arg *arg)
 	return (string);
 }
 
-static char	*put_width(char *string, t_fs_arg *arg)
+static char	*put_width(char *string, t_fs_arg *arg, int value)
 {
 	arg->width -= ft_strlen(string);
 	if (arg->has_visible_signal == 1)
 		arg->width--;
-	if ((arg->precision > 0 && arg->width > 0)
-		|| (arg->precision == 0 && arg->zero == 0 && arg->width > 0
-		&& arg->space == 1) || arg->space == 0)
+	if ((arg->precision > 0 && arg->width > 0) || arg->width > 0)
 	{
 		if (arg->has_visible_signal == 1)
 		{
@@ -62,7 +60,7 @@ char	*translate_to_decimal(t_fs_arg *arg, char *fmt, int value)
 
 	decimal = ft_itoa(value);
 	decimal = put_precision(decimal, arg);
-	decimal = put_width(decimal, arg);
+	decimal = put_width(decimal, arg, value);
 	decimal = put_flags(decimal, arg);
 	fmt = ft_str_replace(fmt, arg->argument, decimal);
 	ft_free_ptr((void **) &decimal);
