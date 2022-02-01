@@ -16,7 +16,7 @@ static char	*put_flags(char *string, t_fs_arg *arg)
 {
 	if (arg->has_visible_signal == 1)
 		string = ft_str_merge(ft_chr_to_str(arg->visible_signal, 1), string);
-	else if (arg->has_visible_signal == 0 && arg->space == 1 && arg->width == 0)
+	if (arg->has_visible_signal == 00 && arg->space == 1 && arg->width <= 0)
 		string = ft_str_merge(ft_chr_to_str(' ', 1), string);
 	return (string);
 }
@@ -26,7 +26,8 @@ static char	*put_width(char *string, t_fs_arg *arg)
 	arg->width -= ft_strlen(string);
 	if (arg->has_visible_signal == 1)
 		arg->width--;
-	if ((arg->precision > 0 && arg->width > 0) || (arg->width > 0 && arg->zero == 0))
+	if ((arg->precision > 0 && arg->width > 0)
+		|| (arg->width > 0 && arg->zero == 0))
 	{
 		if (arg->has_visible_signal == 1)
 		{

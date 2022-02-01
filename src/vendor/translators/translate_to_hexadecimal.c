@@ -77,8 +77,8 @@ char	*translate_to_hexadecimal(t_fs_arg *arg, char *fmt, size_t value)
 		i = 0;
 		while (i < len)
 		{
-				hexadecimal[i] = ft_toupper(hexadecimal[i]);
-				i++;
+			hexadecimal[i] = ft_toupper(hexadecimal[i]);
+			i++;
 		}
 	}
 	fmt = ft_str_replace(fmt, arg->argument, hexadecimal);

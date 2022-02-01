@@ -12,6 +12,7 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
 /*---------------------- libs----------------------------------------  */
 // ↓ has va_(start, arg, copy, end) - variadic functions
 # include <stdarg.h>
