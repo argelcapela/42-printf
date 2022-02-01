@@ -4,9 +4,13 @@
 
 int main(void)
 {
+<<<<<<< HEAD
 
   printf(" %-3d ", 1);
 	printf(" %-4d ", 9);
+=======
+  ft_printf("%-9d", 6);
+>>>>>>> 2aaa4eefb3c3884413af524798a16ddb2c965286
 	return (0);
 }
 

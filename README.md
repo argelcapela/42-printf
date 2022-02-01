@@ -271,7 +271,12 @@ a<br>
 	</thead>
         <tr>
             <td align="center">(número)</td>
-            <td>Indica a quantidade de vezes que as flags (space, 0) se repetem. Quando o 'width' é colocado sem flags, ele subentende que tem uma flag (space), ou seja adiciona espaços a esquerda.</td>
+            <td>
+<ul>	
+	<li>Indica a quantidade de vezes que as flags (space, 0) se repetem. Essa quantidade se zeros ou espaços é igual a diferença entre o width e a quantidade caracteres ou algarismos do valor a ser printado (contanto com sinal também, se ele está visível).</li>
+	<li>Quando o 'width' é colocado sem flags, ele subentende que tem uma flag (space), ou seja adiciona espaços a esquerda.</li>
+</ul>	
+	</td>
         </tr>
         <tr>
             <td align="center">*</td>
@@ -294,7 +299,13 @@ a<br>
 <tbody>
 <tr>
     <td align="center">.(número)</td>
-    <td>Para 's', indica a quantidade de caracteres que serão printados. Para 'd, i, u' indica a quantidade de zeros a esquerda. (Parecido com width, ou seja, a quantidade de zeros é igual a diferença entre precision e a quantidade de algarismos a ser printado, contando com o sinal se ele é visível.). <br> *Apenas para conhecimento pessoal, no printf oficial, o precision usado com a flag 'f', indica a quantidade de casas decimais depois da vírgula, ou seja, pode ser usado para simplificar números decimais.</td>
+    <td>
+<ul>
+	<li>Para 's', indica a quantidade de caracteres que serão printados.</li>
+	<li>Para 'd, i, u' indica a quantidade de zeros a esquerda. (Parecido com width, ou seja, a quantidade de zeros é igual a diferença entre precision e a quantidade de algarismos a ser printado, contando com o sinal se ele é visível.).</li> 
+	<li>*Apenas para conhecimento pessoal, no printf oficial, o precision usado com a flag 'f', indica a quantidade de casas decimais depois da vírgula, ou seja, pode ser usado para simplificar números decimais.</li>
+</ul>
+    </td>
 </tr>
 <tr>
     <td align="center">.(*)</td>
