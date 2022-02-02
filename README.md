@@ -12,13 +12,13 @@
 </div>
 <br><br>
 	
-# :sparkles: O que é o 42-printf ?
+# ✨ O que é o 42-printf ?
 <b>Trata-se de uma recodificação da função clássica printf. Excelente para aprender sobre argumentos variados, funções variádicas, um pouco do que tem debaixo do pano de I/O do OS e formatar um projeto grande, com vários arquivos.. Importante para aprender a lidar com um projeto mais complicado, grande que requer mais organização, boas práticas e familiaridade com a linguagem.</b><br>
 </div>
 
 <div class="col-12">
 
-# :wrench: Tecnologias utilizadas:<br>
+# 🔧 Tecnologias utilizadas:<br>
 <div style="display: inline_block">
     <img align="center" alt="gel-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
 
@@ -26,14 +26,14 @@
 
 <div class="col-12">
 
-# :rocket: Rodando o projeto:<br>
+# 🚀 Rodando o projeto:<br>
 
 	
 </div>
 <br>
 <div class="col-12">
     
-# :pushpin: O que eu aprendi e como foi desenvolvido esse projeto?<br>
+# 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <b>1) Conhecimento adquiridos para fazer o 42-printf</b><br>
 <li><a href="#algoritmo">Qual a lógica do printf com bônus? 😈😈</a></li>
 <li><a href="#bases">Dominando Conversão de Bases! 😎👌</a></li>
@@ -49,7 +49,7 @@
 	
 <div class="col-12">
 	
-# :handshake: Colaboradores:<br>
+# 🤝 Colaboradores:<br>
 <table>
   <tr>
     <td align="center">
@@ -68,7 +68,7 @@
 	
 <div class="col-12">
 	
-# :dart: Status do projeto:<br>
+# 📆 Status do projeto:<br>
 <img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/desenvolvimento.png?raw=true" width="250px" height="200px">
 </div>
 	
@@ -76,7 +76,7 @@
 
 <div class="col-12">
 	
-# :clipboard: Nota:<br>
+# 📋 Nota:<br>
 <img src="#" width="150px" height="150px" alt="nota gnl">
 </div>
 	
@@ -84,7 +84,7 @@
 
 <div class="col-12">
 	
-# :bug:	 Erros:<br>
+# 🐞 Erros:<br>
 <p>Identificou um erro? Por favor me informe! ou fique a vontade para criar um *issue* aqui no Github e contribuir.</p>
 <p>Também fique a vontade para opinar, criticar, xingar, elogiar etc. Para mim é tudo a mesma coisa, fonte de crescimento pessoal. Eu não sei tudo, mas estou buscando ser um profissional 1% melhor a cada dia.</p>
 </div>
@@ -103,7 +103,7 @@
 	
 <div align="center">
 
-# :crown: 
+# 👑
 	
 </div>    
 <br><br>
