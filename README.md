@@ -35,13 +35,12 @@
     
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <b>1) Conhecimento adquiridos para fazer o 42-printf</b><br>
-<li><a href="#algoritmo">Qual a lógica do printf com bônus? 😈😈</a></li>
+<li><a href="#algoritmo">😈 Vamos entender o Printf com Bônus? 😈</a></li>
 <li><a href="#bases">Dominando Conversão de Bases! 😎👌</a></li>
 
 <br>
 	
 <b>2) Brinde</b>
-<li><a href="#step-by-step"> 42-printf Passo a Passo</a></li>
 <li><a href="#outras">Outras Coisas Legais</a></li>
 <li><a href="#fontes">Fontes</a></li>
 </div>
@@ -69,7 +68,7 @@
 <div class="col-12">
 	
 # 📆 Status do projeto:<br>
-<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/desenvolvimento.png?raw=true" width="250px" height="200px">
+<img src="https://i.imgur.com/3bRGIPH.png" width="250px" height="200px">
 </div>
 	
 <br>
@@ -77,7 +76,7 @@
 <div class="col-12">
 	
 # 📋 Nota:<br>
-<img src="#" width="150px" height="150px" alt="nota gnl">
+<img src="https://i.imgur.com/mKymv23.png" width="150px" height="150px" alt="nota ft_printf">
 </div>
 	
 <br>
@@ -98,7 +97,6 @@
 	
 
 <br><br><br>
-<br><br><br>
 <br><br>
 	
 <div align="center">
@@ -110,7 +108,8 @@
 <br><br>
 
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
-<h2 id="algoritmo">Qual a lógica do Printf (😈 Com Bônus 😈)?</h2>
+<br><br><br>
+<h2 id="algoritmo">😈 Vamos entender o Printf com Bônus? 😈</h2>
 <br>	
 	
 
@@ -363,23 +362,38 @@ a<br>
 </table>
 	
 
-<br><br><br><br>
-<b>Essa foi a minha lógica para o meu printf, tendo como base os pontos acima:</b>
+<br><br><br>
+<!--<b>Essa foi a minha lógica para o meu printf, tendo como base os pontos acima:</b>
 <p>Não é a melhor de todas, mas foi como desenvolvi. #SempreAprendendo! 😁✌</p>
 <img src="#" alt="Fluxograma printf"><br> 
 <a href="https://miro.com/app/board/uXjVOUSeK6A=/?invite_link_id=432239742834">Clique aqui para uma melhor visualização</a>
-<br><br>
+<br><br>-->
 	
 <h2 id="bases">Partiu dominar a conversão entre bases? 😎👌</h2>
+<br>
+<b>Decimal para Hexa?</b>
 
+<br><br>	
+<b>Hexa para Decimal?</b>
+	
+<br><br>
+<b>Hexa para Binário?</b>
+	
+<br><br>
+<b>Binário para Hexa?</b>
 
+<br><br>
+<b>Decimal para Binário?</b>
+	
+<br><br>
+<b>Binário para Decimal?</b>
 	
 	
 <br><br><br>
 	
-<h2 id="step-by-step">42-Printf Passo a Passo</h2><br>
+<!--<h2 id="step-by-step">42-Printf Passo a Passo</h2><br>
 <img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/desenvolvimento.png?raw=true" width="250px" height="200px">
-<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>-->
 
 <br><br>
 
@@ -392,12 +406,10 @@ export PS1="\u > "
 <p>Esconder o diretório do diretório atual do shell. Negócio chato ... 🤨</p>
 
 <br><br>
-
-		     
-<br><br>
+	
 
 <h2 id="fontes">Fontes</h2>
-<li><a href="#"> Link 1</a></li>
+Por enquanto nada...🙂
 
 
 
