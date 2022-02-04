@@ -407,7 +407,7 @@ a<br>
 export PS1="\u > "
 ```
 
-<p>Esconder o diretório do diretório atual do shell. Negócio chato ... 🤨</p>
+<p>Esconder o diretório do shell. Negócio chato ... 🤨</p>
 
 <br><br>
 	
