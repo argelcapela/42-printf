@@ -28,7 +28,32 @@
 
 # 🚀 Rodando o projeto:<br>
 
+<b> A seguir temos um exemplo de main para testar o FT_PRINTF:</b><br><br>
+
+```
+#include "ft_printf.h"
+#include <stdio.h>
+
+int main(void)
+{
+	char *str = ft_strdup("argel capela");
+	ft_printf("%s", str);
+	return(0);
+}
+
+```
 	
+<br>
+😎compilando...<br>
+	
+```bash
+$ make 
+# Na pasta raiz do projeto
+	
+$ gcc libftprintf.a main.c && ./a.out	
+```
+	
+<br><br>
 </div>
 <br>
 <div class="col-12">
@@ -36,7 +61,6 @@
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <b>1) Conhecimento adquiridos para fazer o 42-printf</b><br>
 <li><a href="#algoritmo">😈 Vamos entender o Printf com Bônus? 😈</a></li>
-<li><a href="#bases">Dominando Conversão de Bases! 😎👌</a></li>
 
 <br>
 	
@@ -369,27 +393,7 @@ a<br>
 <a href="https://miro.com/app/board/uXjVOUSeK6A=/?invite_link_id=432239742834">Clique aqui para uma melhor visualização</a>
 <br><br>-->
 	
-<h2 id="bases">Partiu dominar a conversão entre bases? 😎👌</h2>
-<br>
-<b>Decimal para Hexa?</b>
-
-<br><br>	
-<b>Hexa para Decimal?</b>
-	
 <br><br>
-<b>Hexa para Binário?</b>
-	
-<br><br>
-<b>Binário para Hexa?</b>
-
-<br><br>
-<b>Decimal para Binário?</b>
-	
-<br><br>
-<b>Binário para Decimal?</b>
-	
-	
-<br><br><br>
 	
 <!--<h2 id="step-by-step">42-Printf Passo a Passo</h2><br>
 <img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/desenvolvimento.png?raw=true" width="250px" height="200px">
@@ -409,7 +413,7 @@ export PS1="\u > "
 	
 
 <h2 id="fontes">Fontes</h2>
-Por enquanto nada...🙂
+<li><a href="https://dicasdeprogramacao.com.br/as-10-conversoes-numericas-mais-utilizadas-na-computacao/#:~:text=A%20convers%C3%A3o%20num%C3%A9rica%20de%20n%C3%BAmeros,%22de%20baixo%20para%20cima%22.">10 conversões de base mais utilizadas</a></li>
 
 
 
