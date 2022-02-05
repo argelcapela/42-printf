@@ -130,7 +130,7 @@ $ gcc libftprintf.a main.c && ./a.out
 <br>
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <br><br>
-<i>Fique a vontade para conferir meu estudo sobre a 42-printf, clicando no icone bonitinho abaixo.</i><br><br>
+<i>Fique a vontade para conferir meu estudo sobre o 42-printf, clicando no icone bonitinho abaixo.</i><br><br>
 <a href="https://github.com/argelcapela/42-printf/blob/main/42-printf-study.md" target="_BLANK"><img src="https://i.imgur.com/rEr1vma.png" alt="conferir estudo"></a>
 <br>
 </div>   
