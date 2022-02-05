@@ -60,13 +60,13 @@ $ gcc libftprintf.a main.c && ./a.out
     
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <b>1) Conhecimento adquiridos para fazer o 42-printf</b><br>
-<li><a href="#algoritmo">😈 Vamos entender o Printf com Bônus? 😈</a></li>
+<li><a href="https://github.com/argelcapela/42-libft/blob/main/42-libft-study.md#algoritmo">😈 Vamos entender o Printf com Bônus? 😈</a></li>
 
 <br>
 	
 <b>2) Brinde</b>
-<li><a href="#outras">Outras Coisas Legais</a></li>
-<li><a href="#fontes">Fontes</a></li>
+<li><a href="https://github.com/argelcapela/42-libft/blob/main/42-libft-study.md#outras">Outras Coisas Legais</a></li>
+<li><a href="https://github.com/argelcapela/42-libft/blob/main/42-libft-study.md#fontes">Fontes</a></li>
 </div>
 <br>	
 	
@@ -130,7 +130,7 @@ $ gcc libftprintf.a main.c && ./a.out
 <br>
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <br><br>
-<i>Fique a vontade para conferir meu estudo sobre a 42-printf, clicando no icone bonitinho abaixo.
+<i>Fique a vontade para conferir meu estudo sobre a 42-printf, clicando no icone bonitinho abaixo.</i><br><br>
 <a href="https://github.com/argelcapela/42-libft/blob/main/42-libft-study.md" target="_BLANK"><img src="https://i.imgur.com/rEr1vma.png" alt="conferir estudo"></a>
 <br>
 </div>   
