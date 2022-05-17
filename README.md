@@ -28,12 +28,27 @@
 
 # 🚀 Rodando o projeto:<br>
 
-<b> A seguir temos um exemplo de main para testar o FT_PRINTF:</b><br><br>
+```bash
+# 1) Clone o projeto
+$ git clone https://github.com/argelcapela/42-printf.git 
+	
+# 2) Entre na pasta 'app'
+$ cd app	
+	
+# 3) Compile o printf usando o make, será gerado o arquivo libftprintf.a
+$ make
+	
+# 4) Adicione (#include "ft_printf.h") no topo do arquivo main.c, e compile tudo junto
+$ gcc main.c libftprintf.a
 
+# 5) Execute o binário gerado
+$ ./a.out
+	
 ```
+
+```c
 /* main.c */
 #include "ft_printf.h"
-#include <stdio.h>
 
 int main(void)
 {
